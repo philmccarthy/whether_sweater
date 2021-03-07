@@ -5,7 +5,8 @@ RSpec.describe ForecastFacade do
     describe '::get_forecast' do
       it 'creates a Forecast object from ForecastService data', :vcr do
         params = { location: 'denver,co'}
-        forecast = ForecastFacade.get_forecast(params)
+        location = GeocodeFacade.get_geocode(params[:location])
+        forecast = ForecastFacade.get_forecast(location)
 
         expect(forecast).to be_a Forecast
         expect(forecast.instance_variables).to eq([
