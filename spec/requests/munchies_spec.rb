@@ -56,6 +56,35 @@ describe 'Munchies Request' do
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors]).to be_an Array
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+
+      end
+
+      it 'raises an exception if a location cannot be found by geocode API request' do
+        params = {start: "denver,co", destination: "asdasfjaskjh" }
+        get "/api/v1/munchies?start=#{params[:start]}&destination=#{params[:destination]}"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('bad_address')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq("Are you sure that's a valid location? We couldn't find it!")
       end
     end
   end
