@@ -12,15 +12,13 @@ describe 'Munchies Request' do
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        require 'pry'; binding.pry
-        
         expect(parsed_response).to be_a Hash
         expect(parsed_response.keys).to eq([:data])
         expect(parsed_response[:data]).to be_a Hash
 
         expect(parsed_response[:data].keys).to eq([:id, :type, :attributes])
 
-        expect(parsed_response[:data][:id]).to be_nil
+        expect(parsed_response[:data][:id]).to eq('null')
         expect(parsed_response[:data][:type]).to eq('munchie')
         expect(parsed_response[:data][:attributes]).to be_a Hash
         expect(parsed_response[:data][:attributes].keys).to eq([
