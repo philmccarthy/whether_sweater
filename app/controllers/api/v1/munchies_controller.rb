@@ -34,5 +34,12 @@ class Api::V1::MunchiesController < ApplicationController
 
     parsed = JSON.parse(response.body, symbolize_names: true)
     restaurant = parsed[:businesses][0]
+
+    render json: MunchieSerializer.new(Munchie.new({
+      destination_city: params[:destination],
+      travel_time: travel_time,
+      forecast: forecast,
+      restaurant: restaurant
+    }))
   end
 end
