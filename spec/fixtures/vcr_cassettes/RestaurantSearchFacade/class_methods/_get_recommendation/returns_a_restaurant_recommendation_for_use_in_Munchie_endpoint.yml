@@ -1,0 +1,274 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=seattle,wa&open_at=1615294136&term=seafood
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer XNXjxHvrwSFvFadtQfuAPqpILBx2xO6TtAbo46URDWQAV2O9aRZDc0xnE-5P5-FFEVzPZI2YH0ocqPo38rX3Sp8xas6QWAzD2fryeoIWDkf3Jx9Oz8W-YN39Q0dFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - f2abaa44d9937f12
+      Ratelimit-Remaining:
+      - '4980'
+      Ratelimit-Dailylimit:
+      - '5000'
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-03-09T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-8665dfcd87-5svxj; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-157-99-uswest2bprod
+      X-Extlb:
+      - 10-69-157-99-uswest2bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 08 Mar 2021 18:24:57 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8248-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "cFTq5MmBDPb_VEqQXPw2Dw", "alias": "wasabi-sushi-and-izakaya-seattle",
+        "name": "Wasabi Sushi & Izakaya", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/7Wq6K5Sh7Xdp5AHtngLYlA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wasabi-sushi-and-izakaya-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1625, "categories": [{"alias": "sushi", "title": "Sushi Bars"},
+        {"alias": "izakaya", "title": "Izakaya"}, {"alias": "ramen", "title": "Ramen"}],
+        "rating": 4.0, "coordinates": {"latitude": 47.614196, "longitude": -122.346226},
+        "transactions": ["restaurant_reservation", "pickup", "delivery"], "price":
+        "$$", "location": {"address1": "2311 2nd Ave", "address2": "", "address3":
+        "", "city": "Seattle", "zip_code": "98121", "country": "US", "state": "WA",
+        "display_address": ["2311 2nd Ave", "Seattle, WA 98121"]}, "phone": "+12064416044",
+        "display_phone": "(206) 441-6044", "distance": 1484.0542206874866}, {"id":
+        "HX3E14oV9TYH3FZE2096nA", "alias": "sushi-joa-mercer-island-8", "name": "Sushi
+        Joa", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/OouEkdIrJ9NUuOgsH8KJsA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/sushi-joa-mercer-island-8?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 165, "categories": [{"alias": "sushi", "title": "Sushi Bars"},
+        {"alias": "japanese", "title": "Japanese"}, {"alias": "seafood", "title":
+        "Seafood"}], "rating": 4.0, "coordinates": {"latitude": 47.58615, "longitude":
+        -122.23409}, "transactions": ["pickup", "delivery"], "price": "$$", "location":
+        {"address1": "2717 78th Ave SE", "address2": null, "address3": null, "city":
+        "Mercer Island", "zip_code": "98040", "country": "US", "state": "WA", "display_address":
+        ["2717 78th Ave SE", "Mercer Island, WA 98040"]}, "phone": "+12062304120",
+        "display_phone": "(206) 230-4120", "distance": 8769.858353590678}, {"id":
+        "s6SgG1KUery9zI1YGsDy1g", "alias": "pan-pacific-seattle-seattle-2", "name":
+        "Pan Pacific Seattle", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/_8VU3Wdt9BTJXdFpvvQmHg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pan-pacific-seattle-seattle-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 310, "categories": [{"alias": "hotels", "title": "Hotels"},
+        {"alias": "venues", "title": "Venues & Event Spaces"}], "rating": 4.5, "coordinates":
+        {"latitude": 47.6181399045732, "longitude": -122.337503233181}, "transactions":
+        [], "price": "$$$", "location": {"address1": "2125 Terry Ave", "address2":
+        null, "address3": "", "city": "Seattle", "zip_code": "98121", "country": "US",
+        "state": "WA", "display_address": ["2125 Terry Ave", "Seattle, WA 98121"]},
+        "phone": "+12062648111", "display_phone": "(206) 264-8111", "distance": 823.0699739003007},
+        {"id": "qzTuG0M0L7jcaVzTt4tuqg", "alias": "macau-casino-tukwila-2", "name":
+        "Macau Casino", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/eRtnDXw8u47RQ_H7CfzGVQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/macau-casino-tukwila-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 13, "categories": [{"alias": "casinos", "title": "Casinos"},
+        {"alias": "chinese", "title": "Chinese"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 3.5, "coordinates": {"latitude": 47.464329579731, "longitude": -122.260891199112},
+        "transactions": ["pickup", "delivery"], "location": {"address1": "5700 Southcenter
+        Blvd", "address2": "", "address3": "", "city": "Tukwila", "zip_code": "98188",
+        "country": "US", "state": "WA", "display_address": ["5700 Southcenter Blvd",
+        "Tukwila, WA 98188"]}, "phone": "+12062460888", "display_phone": "(206) 246-0888",
+        "distance": 18767.503818101413}, {"id": "ZltF8yNLuMgD6XT_6Rpqdg", "alias":
+        "fortune-poker-renton-2", "name": "Fortune Poker", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zMqhqQj8NCyHE_wrKRtXXQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/fortune-poker-renton-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 28, "categories": [{"alias": "casinos", "title": "Casinos"},
+        {"alias": "vietnamese", "title": "Vietnamese"}, {"alias": "tradamerican",
+        "title": "American (Traditional)"}], "rating": 4.0, "coordinates": {"latitude":
+        47.446849, "longitude": -122.217384}, "transactions": ["delivery"], "location":
+        {"address1": "3650 East Valley Rd", "address2": "", "address3": null, "city":
+        "Renton", "zip_code": "98057", "country": "US", "state": "WA", "display_address":
+        ["3650 East Valley Rd", "Renton, WA 98057"]}, "phone": "+14255726500", "display_phone":
+        "(425) 572-6500", "distance": 21750.849648861786}, {"id": "ObocDexxNPyoiFGea65VRQ",
+        "alias": "maven-meals-burien-2", "name": "Maven Meals", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/2aK4G-srMwG07M8z7SNngA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/maven-meals-burien-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 49, "categories": [{"alias": "fooddeliveryservices", "title":
+        "Food Delivery Services"}], "rating": 4.5, "coordinates": {"latitude": 47.4667154,
+        "longitude": -122.343606}, "transactions": [], "price": "$$", "location":
+        {"address1": "641 SW 152nd St", "address2": "", "address3": "", "city": "Burien",
+        "zip_code": "98166", "country": "US", "state": "WA", "display_address": ["641
+        SW 152nd St", "Burien, WA 98166"]}, "phone": "+12065577985", "display_phone":
+        "(206) 557-7985", "distance": 17657.479042845785}, {"id": "rtvhlNYnS3cv-le55HorzA",
+        "alias": "seattle-kombucha-company-kent-3", "name": "Seattle Kombucha Company",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/rEGW54G1yId-Yt0TcIYNHA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/seattle-kombucha-company-kent-3?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 14, "categories": [{"alias": "kombucha", "title": "Kombucha"},
+        {"alias": "foodtrucks", "title": "Food Trucks"}, {"alias": "beertours", "title":
+        "Beer Tours"}], "rating": 4.5, "coordinates": {"latitude": 47.3622818, "longitude":
+        -122.2307072}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        {"address1": "1819 Central Ave S", "address2": "Unit C-49", "address3": "",
+        "city": "Kent", "zip_code": "98032", "country": "US", "state": "WA", "display_address":
+        ["1819 Central Ave S", "Unit C-49", "Kent, WA 98032"]}, "phone": "+14259852364",
+        "display_phone": "(425) 985-2364", "distance": 30300.438858854515}, {"id":
+        "8V2FW-yfu6E2lBBLujviXw", "alias": "riverside-casino-tukwila", "name": "Riverside
+        Casino", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/pGxt7H2Og7WZWOxu9PDaTA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/riverside-casino-tukwila?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 38, "categories": [{"alias": "casinos", "title": "Casinos"}],
+        "rating": 3.0, "coordinates": {"latitude": 47.47682, "longitude": -122.25944},
+        "transactions": [], "location": {"address1": "14060 Interurban Ave S", "address2":
+        "", "address3": "", "city": "Tukwila", "zip_code": "98168", "country": "US",
+        "state": "WA", "display_address": ["14060 Interurban Ave S", "Tukwila, WA
+        98168"]}, "phone": "+12062482363", "display_phone": "(206) 248-2363", "distance":
+        17438.76247861497}, {"id": "coArIeFSTftewLYn88tppA", "alias": "7-eleven-seattle-48",
+        "name": "7-Eleven", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/BwGgSSd6skUvNZ34irqs4w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/7-eleven-seattle-48?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 8, "categories": [{"alias": "convenience", "title": "Convenience
+        Stores"}, {"alias": "servicestations", "title": "Gas Stations"}, {"alias":
+        "coffee", "title": "Coffee & Tea"}], "rating": 3.0, "coordinates": {"latitude":
+        47.5700053, "longitude": -122.3869691}, "transactions": ["pickup", "delivery"],
+        "price": "$", "location": {"address1": "3801 California Ave SW", "address2":
+        "", "address3": "", "city": "Seattle", "zip_code": "98116", "country": "US",
+        "state": "WA", "display_address": ["3801 California Ave SW", "Seattle, WA
+        98116"]}, "phone": "+12069381417", "display_phone": "(206) 938-1417", "distance":
+        7270.130660388156}, {"id": "__pw7Mr2nSsh6N5W4HsmAQ", "alias": "winco-foods-edmonds",
+        "name": "WinCo Foods", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RoFC0zWvvnprO5UL1Xddtg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/winco-foods-edmonds?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 76, "categories": [{"alias": "grocery", "title": "Grocery"}],
+        "rating": 4.0, "coordinates": {"latitude": 47.8005891319822, "longitude":
+        -122.332759983838}, "transactions": [], "price": "$", "location": {"address1":
+        "21900 WA-99", "address2": "", "address3": "", "city": "Edmonds", "zip_code":
+        "98206", "country": "US", "state": "WA", "display_address": ["21900 WA-99",
+        "Edmonds, WA 98206"]}, "phone": "+14256971052", "display_phone": "(425) 697-1052",
+        "distance": 19479.08990835303}, {"id": "_ei2euBiDXWXR0LqYd245w", "alias":
+        "masi-shop-and-shell-gas-station-suquamish", "name": "Masi Shop & Shell Gas
+        Station", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/WF7zPvE7qsrOMZljQaPAKw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/masi-shop-and-shell-gas-station-suquamish?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 17, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}, {"alias": "beer_and_wine", "title": "Beer, Wine & Spirits"}, {"alias":
+        "convenience", "title": "Convenience Stores"}], "rating": 3.5, "coordinates":
+        {"latitude": 47.7138900756836, "longitude": -122.569686889648}, "transactions":
+        [], "price": "$", "location": {"address1": "16281 State Hwy 305 NE", "address2":
+        "", "address3": "", "city": "Suquamish", "zip_code": "98392", "country": "US",
+        "state": "WA", "display_address": ["16281 State Hwy 305 NE", "Suquamish, WA
+        98392"]}, "phone": "+13605984066", "display_phone": "(360) 598-4066", "distance":
+        20690.26893004707}, {"id": "vx59yMUwKAxVX9bKT9jrHg", "alias": "fortune-casino-renton-renton",
+        "name": "Fortune Casino Renton", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/0AprFJOpCzb3pBjYXkBU5Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/fortune-casino-renton-renton?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 28, "categories": [{"alias": "casinos", "title": "Casinos"},
+        {"alias": "sushi", "title": "Sushi Bars"}], "rating": 3.0, "coordinates":
+        {"latitude": 47.47956, "longitude": -122.21529}, "transactions": [], "location":
+        {"address1": "111 S 3rd St", "address2": "", "address3": "", "city": "Renton",
+        "zip_code": "98057", "country": "US", "state": "WA", "display_address": ["111
+        S 3rd St", "Renton, WA 98057"]}, "phone": "+14252283700", "display_phone":
+        "(425) 228-3700", "distance": 18571.39268033472}, {"id": "rhGxurIWkrgGObAxIaPICw",
+        "alias": "7-eleven-seattle-60", "name": "7-Eleven", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/MoGPR3NVtin6BQLdlLfnkA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/7-eleven-seattle-60?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1, "categories": [{"alias": "convenience", "title": "Convenience
+        Stores"}, {"alias": "coffee", "title": "Coffee & Tea"}], "rating": 3.0, "coordinates":
+        {"latitude": 47.551035481843, "longitude": -122.287394106388}, "transactions":
+        ["pickup", "delivery"], "price": "$", "location": {"address1": "5700 Mlk Jr
+        Way S", "address2": "", "address3": "", "city": "Seattle", "zip_code": "98118",
+        "country": "US", "state": "WA", "display_address": ["5700 Mlk Jr Way S", "Seattle,
+        WA 98118"]}, "phone": "+12067258421", "display_phone": "(206) 725-8421", "distance":
+        9023.9601900345}, {"id": "bTEseSn0XvVjtqe9IWDcaA", "alias": "saars-super-saver-foods-tukwila",
+        "name": "Saar''s Super Saver Foods", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/5lCNdHPmiLP4QBEN2PF-UQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/saars-super-saver-foods-tukwila?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 22, "categories": [{"alias": "grocery", "title": "Grocery"}],
+        "rating": 3.0, "coordinates": {"latitude": 47.4730062076742, "longitude":
+        -122.28553365916}, "transactions": [], "price": "$$", "location": {"address1":
+        "3725 S 144th St", "address2": "", "address3": "", "city": "Tukwila", "zip_code":
+        "98168", "country": "US", "state": "WA", "display_address": ["3725 S 144th
+        St", "Tukwila, WA 98168"]}, "phone": "+12067379540", "display_phone": "(206)
+        737-9540", "distance": 17357.619562543838}, {"id": "bazcXeIvSoEFb7alUoByyA",
+        "alias": "7-eleven-bothell", "name": "7-Eleven", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/VcZPacfsw-K1GWQ-k57HTQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/7-eleven-bothell?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 8, "categories": [{"alias": "convenience", "title": "Convenience
+        Stores"}, {"alias": "servicestations", "title": "Gas Stations"}, {"alias":
+        "coffee", "title": "Coffee & Tea"}], "rating": 4.5, "coordinates": {"latitude":
+        47.7334354309812, "longitude": -122.195555269718}, "transactions": ["pickup",
+        "delivery"], "price": "$", "location": {"address1": "14501 Juanita-woodinville",
+        "address2": "", "address3": "", "city": "Bothell", "zip_code": "98011", "country":
+        "US", "state": "WA", "display_address": ["14501 Juanita-woodinville", "Bothell,
+        WA 98011"]}, "phone": "+14258235488", "display_phone": "(425) 823-5488", "distance":
+        15938.741211463128}, {"id": "5x6Q1V3kHYu9UroFI9q1jg", "alias": "7-eleven-seattle",
+        "name": "7-Eleven", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/8bUIxKICaS6bt9aygFwtvA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/7-eleven-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 25, "categories": [{"alias": "convenience", "title": "Convenience
+        Stores"}, {"alias": "servicestations", "title": "Gas Stations"}, {"alias":
+        "coffee", "title": "Coffee & Tea"}], "rating": 2.5, "coordinates": {"latitude":
+        47.672025301152, "longitude": -122.353934347629}, "transactions": ["pickup",
+        "delivery"], "price": "$", "location": {"address1": "5900 Phinney Ave N",
+        "address2": "", "address3": "", "city": "Seattle", "zip_code": "98103", "country":
+        "US", "state": "WA", "display_address": ["5900 Phinney Ave N", "Seattle, WA
+        98103"]}, "phone": "+12067894477", "display_phone": "(206) 789-4477", "distance":
+        5362.998693367934}, {"id": "8uE7nVyniLnCjJGjRMRmwg", "alias": "sher-e-punjab-grill-seattle",
+        "name": "Sher E Punjab Grill", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/V2hZANgcl-WNyAo2ZCY_jQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/sher-e-punjab-grill-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 55, "categories": [{"alias": "indpak", "title": "Indian"},
+        {"alias": "halal", "title": "Halal"}], "rating": 1.5, "coordinates": {"latitude":
+        47.71843, "longitude": -122.29547}, "transactions": ["pickup", "delivery"],
+        "location": {"address1": "12336 Lake City Way NE", "address2": "Ste A", "address3":
+        "", "city": "Seattle", "zip_code": "98125", "country": "US", "state": "WA",
+        "display_address": ["12336 Lake City Way NE", "Ste A", "Seattle, WA 98125"]},
+        "phone": "+12067081741", "display_phone": "(206) 708-1741", "distance": 10771.487082728518},
+        {"id": "UipC1aQrGpMkdEOA7TzBFA", "alias": "7-eleven-silverdale", "name": "7-Eleven",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/o8zp9qkmZQQSYA5xNUptDA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/7-eleven-silverdale?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1, "categories": [{"alias": "convenience", "title": "Convenience
+        Stores"}, {"alias": "coffee", "title": "Coffee & Tea"}], "rating": 3.0, "coordinates":
+        {"latitude": 47.6507538030039, "longitude": -122.694545388222}, "transactions":
+        ["pickup", "delivery"], "price": "$", "location": {"address1": "9671 Silverdale
+        Way", "address2": "", "address3": "", "city": "Silverdale", "zip_code": "98383",
+        "country": "US", "state": "WA", "display_address": ["9671 Silverdale Way",
+        "Silverdale, WA 98383"]}, "phone": "+13606921764", "display_phone": "(360)
+        692-1764", "distance": 27047.543873235558}, {"id": "URS00NfHIwKgbuUwy3qMxA",
+        "alias": "great-american-casino-everett", "name": "Great American Casino",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/lcuT-d7o2Mq0hHyyrlNRiw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/great-american-casino-everett?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 60, "categories": [{"alias": "casinos", "title": "Casinos"},
+        {"alias": "sportsbars", "title": "Sports Bars"}, {"alias": "tradamerican",
+        "title": "American (Traditional)"}], "rating": 3.0, "coordinates": {"latitude":
+        47.882923, "longitude": -122.237182}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "12715 4th Ave W", "address2": "",
+        "address3": "", "city": "Everett", "zip_code": "98204", "country": "US", "state":
+        "WA", "display_address": ["12715 4th Ave W", "Everett, WA 98204"]}, "phone":
+        "+14253471669", "display_phone": "(425) 347-1669", "distance": 29576.660937952132},
+        {"id": "k0MdKq9P5fyBfyCBM-B7hQ", "alias": "haggen-food-and-pharmacy-woodinville",
+        "name": "Haggen Food & Pharmacy", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7vK8jRVZfIS_3CA77-vnkQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/haggen-food-and-pharmacy-woodinville?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 111, "categories": [{"alias": "grocery", "title": "Grocery"},
+        {"alias": "delis", "title": "Delis"}, {"alias": "butcher", "title": "Butcher"}],
+        "rating": 3.5, "coordinates": {"latitude": 47.755752, "longitude": -122.157352},
+        "transactions": [], "price": "$$", "location": {"address1": "17641 Garden
+        Way NE", "address2": "", "address3": "", "city": "Woodinville", "zip_code":
+        "98072", "country": "US", "state": "WA", "display_address": ["17641 Garden
+        Way NE", "Woodinville, WA 98072"]}, "phone": "+14253986700", "display_phone":
+        "(425) 398-6700", "distance": 19693.884072740217}], "total": 43, "region":
+        {"center": {"longitude": -122.33551025390625, "latitude": 47.62541904760501}}}'
+  recorded_at: Mon, 08 Mar 2021 18:24:57 GMT
+recorded_with: VCR 6.0.0
