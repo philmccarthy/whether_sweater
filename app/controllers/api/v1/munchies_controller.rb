@@ -11,12 +11,13 @@ class Api::V1::MunchiesController < ApplicationController
     travel_time = RouteFacade.get_travel_time(params)
 
     # Current forecast - Open Weather
-    destination = GeocodeFacade.get_geocode(params[:destination])
-    weather_data = ForecastFacade.get_forecast(destination)
-    forecast = {
-      summary: weather_data.current_weather[:conditions],
-      temperature: weather_data.current_weather[:temp].round(0).to_s
-    }
+    forecast = DestinationForecastFacade.get_forecast(params)
+    # destination = GeocodeFacade.get_geocode(params[:destination])
+    # weather_data = ForecastFacade.get_forecast(destination)
+    # forecast = {
+    #   summary: weather_data.current_weather[:conditions],
+    #   temperature: weather_data.current_weather[:temp].round(0).to_s
+    # }
 
     # Restaurant - Yelp Fusion business search
     conn = Faraday.new('https://api.yelp.com/v3/businesses/') do |request|
