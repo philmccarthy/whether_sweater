@@ -1,13 +1,14 @@
 class Api::V1::MunchiesController < ApplicationController
   def index
     # Travel time - MQ Route
-    response = Faraday.get('http://www.mapquestapi.com/directions/v2/route') do |request|
-      request.params[:key] = ENV['MAP_QUEST_KEY']
-      request.params[:from] = params[:start]
-      request.params[:to] = params[:destination]
-    end
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    travel_time = parsed[:route][:formattedTime]
+    # response = Faraday.get('http://www.mapquestapi.com/directions/v2/route') do |request|
+    #   request.params[:key] = ENV['MAP_QUEST_KEY']
+    #   request.params[:from] = params[:start]
+    #   request.params[:to] = params[:destination]
+    # end
+    # parsed = JSON.parse(response.body, symbolize_names: true)
+    # travel_time = parsed[:route][:formattedTime]
+    travel_time = RouteFacade.get_travel_time(params)
 
     # Current forecast - Open Weather
     destination = GeocodeFacade.get_geocode(params[:destination])
