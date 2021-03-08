@@ -1,0 +1,321 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=seattle,wa&term=seafood
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer XNXjxHvrwSFvFadtQfuAPqpILBx2xO6TtAbo46URDWQAV2O9aRZDc0xnE-5P5-FFEVzPZI2YH0ocqPo38rX3Sp8xas6QWAzD2fryeoIWDkf3Jx9Oz8W-YN39Q0dFYHYx
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 650733e72c71d08e
+      Ratelimit-Remaining:
+      - '4996'
+      Ratelimit-Dailylimit:
+      - '5000'
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-03-09T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-8665dfcd87-xwckk; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-113-152-uswest2aprod
+      X-Extlb:
+      - 10-69-113-152-uswest2aprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 08 Mar 2021 16:37:29 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8280-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "RrU64vQUtFuRcN9AZty9SQ", "alias": "seattle-fish-guys-seattle",
+        "name": "Seattle Fish Guys", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wMV5mP639mk8dzQc-Nxx0A/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/seattle-fish-guys-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 778, "categories": [{"alias": "seafoodmarkets", "title": "Seafood
+        Markets"}, {"alias": "poke", "title": "Poke"}], "rating": 4.5, "coordinates":
+        {"latitude": 47.59893667, "longitude": -122.30261546}, "transactions": ["pickup",
+        "delivery"], "price": "$$", "location": {"address1": "411 23rd Ave S", "address2":
+        null, "address3": "", "city": "Seattle", "zip_code": "98144", "country": "US",
+        "state": "WA", "display_address": ["411 23rd Ave S", "Seattle, WA 98144"]},
+        "phone": "+12064857388", "display_phone": "(206) 485-7388", "distance": 3840.7877641518858},
+        {"id": "6JIXpRHu0J-smyqAWzqO-Q", "alias": "crab-season-bellevue-3", "name":
+        "Crab Season", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/1zkFHuKf-DONMQVOotbz-g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/crab-season-bellevue-3?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 52, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "asianfusion", "title": "Asian Fusion"}], "rating": 4.5, "coordinates":
+        {"latitude": 47.580981, "longitude": -122.137123}, "transactions": ["delivery",
+        "pickup"], "location": {"address1": "3303 156th Ave SE", "address2": null,
+        "address3": "", "city": "Bellevue", "zip_code": "98007", "country": "US",
+        "state": "WA", "display_address": ["3303 156th Ave SE", "Bellevue, WA 98007"]},
+        "phone": "+14256416666", "display_phone": "(425) 641-6666", "distance": 15672.550989196647},
+        {"id": "xqH038QcquJEMm5LIZHd5w", "alias": "elliotts-oyster-house-seattle-2",
+        "name": "Elliott''s Oyster House", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/naJ4Nkphiis5M36tGrGHJA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/elliotts-oyster-house-seattle-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 3515, "categories": [{"alias": "seafood", "title": "Seafood"}],
+        "rating": 4.0, "coordinates": {"latitude": 47.6054699, "longitude": -122.34092},
+        "transactions": ["delivery"], "price": "$$$", "location": {"address1": "1201
+        Alaskan Way", "address2": "", "address3": "Pier 56", "city": "Seattle", "zip_code":
+        "98101", "country": "US", "state": "WA", "display_address": ["1201 Alaskan
+        Way", "Pier 56", "Seattle, WA 98101"]}, "phone": "+12066234340", "display_phone":
+        "(206) 623-4340", "distance": 2261.936454592631}, {"id": "RnKZxQs-kx85N8YBz55r1w",
+        "alias": "kamakura-japanese-cuisine-fremont-fremont", "name": "Kamakura Japanese
+        Cuisine Fremont", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/zUCBF4kjTI5AbCGpVGxPTQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/kamakura-japanese-cuisine-fremont-fremont?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 11, "categories": [{"alias": "japanese", "title": "Japanese"},
+        {"alias": "seafood", "title": "Seafood"}], "rating": 5.0, "coordinates": {"latitude":
+        47.65114, "longitude": -122.349666}, "transactions": ["delivery", "pickup"],
+        "location": {"address1": "3520 Fremont Ave N", "address2": "", "address3":
+        null, "city": "Fremont", "zip_code": "98103", "country": "US", "state": "WA",
+        "display_address": ["3520 Fremont Ave N", "Fremont, WA 98103"]}, "phone":
+        "+12067081234", "display_phone": "(206) 708-1234", "distance": 3055.001170405223},
+        {"id": "BvOLqjt68GEJREOYQ_vdHw", "alias": "taylor-shellfish-farms-seattle-seattle",
+        "name": "Taylor Shellfish Farms - Seattle", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/KVIxhRZLWywqBTO3TjA9Zw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/taylor-shellfish-farms-seattle-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1040, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "raw_food", "title": "Live/Raw Food"}], "rating": 4.0, "coordinates":
+        {"latitude": 47.614652, "longitude": -122.328081}, "transactions": ["delivery"],
+        "price": "$$", "location": {"address1": "1521 Melrose Ave", "address2": "",
+        "address3": "", "city": "Seattle", "zip_code": "98122", "country": "US", "state":
+        "WA", "display_address": ["1521 Melrose Ave", "Seattle, WA 98122"]}, "phone":
+        "+12065014321", "display_phone": "(206) 501-4321", "distance": 1320.392388575357},
+        {"id": "6I28wDuMBR5WLMqfKxaoeg", "alias": "pike-place-chowder-seattle", "name":
+        "Pike Place Chowder", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ZyQjV-wJQ2GHyX7l3jfbyg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pike-place-chowder-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 7461, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "soup", "title": "Soup"}], "rating": 4.5, "coordinates": {"latitude":
+        47.60939, "longitude": -122.34112}, "transactions": ["pickup", "delivery"],
+        "price": "$$", "location": {"address1": "1530 Post Aly", "address2": "Ste
+        11", "address3": "", "city": "Seattle", "zip_code": "98101", "country": "US",
+        "state": "WA", "display_address": ["1530 Post Aly", "Ste 11", "Seattle, WA
+        98101"]}, "phone": "+12062672537", "display_phone": "(206) 267-2537", "distance":
+        1832.5436169291488}, {"id": "VOPdG8llLPaga9iJxXcMuQ", "alias": "the-pink-door-seattle-4",
+        "name": "The Pink Door", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RoFtoqtXRm3Y-znSHeMXIw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/the-pink-door-seattle-4?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 5243, "categories": [{"alias": "italian", "title": "Italian"},
+        {"alias": "wine_bars", "title": "Wine Bars"}, {"alias": "seafood", "title":
+        "Seafood"}], "rating": 4.5, "coordinates": {"latitude": 47.61028, "longitude":
+        -122.3425}, "transactions": ["delivery"], "price": "$$", "location": {"address1":
+        "1919 Post Alley", "address2": "", "address3": "", "city": "Seattle", "zip_code":
+        "98101", "country": "US", "state": "WA", "display_address": ["1919 Post Alley",
+        "Seattle, WA 98101"]}, "phone": "+12064433241", "display_phone": "(206) 443-3241",
+        "distance": 1755.3385197252683}, {"id": "a4K6WMS8JW31VBteDM5TIA", "alias":
+        "manolin-seattle", "name": "Manolin", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/f9KU-JOM0MkILzP053W8WQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/manolin-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 476, "categories": [{"alias": "seafood", "title": "Seafood"}],
+        "rating": 4.5, "coordinates": {"latitude": 47.651215, "longitude": -122.343091},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "3621
+        Stone Way N", "address2": "", "address3": "", "city": "Seattle", "zip_code":
+        "98103", "country": "US", "state": "WA", "display_address": ["3621 Stone Way
+        N", "Seattle, WA 98103"]}, "phone": "+12062943331", "display_phone": "(206)
+        294-3331", "distance": 2924.0692552621763}, {"id": "n6hB6mIctJQDn-DAH7MpGg",
+        "alias": "dukes-seafood-seattle-8", "name": "Duke''s Seafood", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/jL0SxW_3l--Gxhfeltv4QQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/dukes-seafood-seattle-8?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 940, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude":
+        47.62985, "longitude": -122.33041}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "1111 Fairview Ave N", "address2":
+        "", "address3": "", "city": "Seattle", "zip_code": "98109", "country": "US",
+        "state": "WA", "display_address": ["1111 Fairview Ave N", "Seattle, WA 98109"]},
+        "phone": "+12063829963", "display_phone": "(206) 382-9963", "distance": 623.9755136387116},
+        {"id": "Oo6467E25VdChEl8RkDMMQ", "alias": "wong-tung-seafood-seattle", "name":
+        "Wong Tung Seafood", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/vi2_XeZRMBCWp_CSKEWNYA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wong-tung-seafood-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 29, "categories": [{"alias": "seafoodmarkets", "title": "Seafood
+        Markets"}], "rating": 4.5, "coordinates": {"latitude": 47.6004066, "longitude":
+        -122.3169479}, "transactions": [], "price": "$$", "location": {"address1":
+        "210 12th Ave S", "address2": "", "address3": "", "city": "Seattle", "zip_code":
+        "98144", "country": "US", "state": "WA", "display_address": ["210 12th Ave
+        S", "Seattle, WA 98144"]}, "phone": "+12063239222", "display_phone": "(206)
+        323-9222", "distance": 3116.4387743081015}, {"id": "Sh1j_u__V53IhYSeau-kGA",
+        "alias": "burien-fish-house-burien", "name": "Burien Fish House", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/Y_5YgNtOE_OXsrVMV9iZ3A/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/burien-fish-house-burien?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 542, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "fishnchips", "title": "Fish & Chips"}, {"alias": "sandwiches",
+        "title": "Sandwiches"}], "rating": 4.5, "coordinates": {"latitude": 47.4659789,
+        "longitude": -122.3354993}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "133 SW 153rd St", "address2": "", "address3": "", "city": "Burien",
+        "zip_code": "98166", "country": "US", "state": "WA", "display_address": ["133
+        SW 153rd St", "Burien, WA 98166"]}, "phone": "+12062943506", "display_phone":
+        "(206) 294-3506", "distance": 17728.915873029928}, {"id": "OaxLsM4V3PD2eAn-wq2oig",
+        "alias": "crawfish-house-seattle", "name": "Crawfish House", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/FvSfMJGXCSRguIP47SPQ8w/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/crawfish-house-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 748, "categories": [{"alias": "cajun", "title": "Cajun/Creole"},
+        {"alias": "seafood", "title": "Seafood"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.0, "coordinates": {"latitude": 47.5147199, "longitude": -122.35484},
+        "transactions": ["delivery"], "price": "$$", "location": {"address1": "9826
+        16th Ave SW", "address2": "", "address3": "", "city": "Seattle", "zip_code":
+        "98106", "country": "US", "state": "WA", "display_address": ["9826 16th Ave
+        SW", "Seattle, WA 98106"]}, "phone": "+12065881613", "display_phone": "(206)
+        588-1613", "distance": 12392.949389416914}, {"id": "2FS5eBVcFJ_W461ylUs38Q",
+        "alias": "palisade-seattle", "name": "Palisade", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Ps8n_cRcoA7YPEh0i2TyPA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/palisade-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1447, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "steak", "title": "Steakhouses"}, {"alias": "asianfusion", "title":
+        "Asian Fusion"}], "rating": 4.0, "coordinates": {"latitude": 47.630332, "longitude":
+        -122.391483}, "transactions": ["delivery", "pickup"], "price": "$$$", "location":
+        {"address1": "2601 W Marina Pl", "address2": "", "address3": "Elliott Bay
+        Marina", "city": "Seattle", "zip_code": "98199", "country": "US", "state":
+        "WA", "display_address": ["2601 W Marina Pl", "Elliott Bay Marina", "Seattle,
+        WA 98199"]}, "phone": "+12062851000", "display_phone": "(206) 285-1000", "distance":
+        4229.964454268247}, {"id": "-YlkKYlHYKNcrBs21V-WfQ", "alias": "chinooks-seattle",
+        "name": "Chinook''s", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/P5YpnWdnwRaTHyZQtqtobw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/chinooks-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 858, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "bars",
+        "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 47.6552047,
+        "longitude": -122.3809918}, "transactions": ["delivery"], "price": "$$", "location":
+        {"address1": "1900 W Nickerson St", "address2": "", "address3": "Fishermen''s
+        Ter", "city": "Seattle", "zip_code": "98119", "country": "US", "state": "WA",
+        "display_address": ["1900 W Nickerson St", "Fishermen''s Ter", "Seattle, WA
+        98119"]}, "phone": "+12062834665", "display_phone": "(206) 283-4665", "distance":
+        4792.904170112813}, {"id": "PWKLXxGZI1On2kRcwM8Hxw", "alias": "rockcreek-seafood-and-spirits-seattle",
+        "name": "RockCreek Seafood & Spirits", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/20PWLQaAkK89pTiYntWulw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/rockcreek-seafood-and-spirits-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 946, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "tapasmallplates", "title": "Tapas/Small Plates"}], "rating": 4.5,
+        "coordinates": {"latitude": 47.6594842489603, "longitude": -122.349788737434},
+        "transactions": ["delivery"], "price": "$$$", "location": {"address1": "4300
+        Fremont Ave N", "address2": "", "address3": "", "city": "Seattle", "zip_code":
+        "98103", "country": "US", "state": "WA", "display_address": ["4300 Fremont
+        Ave N", "Seattle, WA 98103"]}, "phone": "+12065577532", "display_phone": "(206)
+        557-7532", "distance": 3936.0230513661218}, {"id": "9OXEAAPONxcA2PQO75fnJQ",
+        "alias": "the-walrus-and-the-carpenter-seattle", "name": "The Walrus and the
+        Carpenter", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/YSQc3rhoq4YuUu0-VapTmg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/the-walrus-and-the-carpenter-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1631, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "tapasmallplates", "title": "Tapas/Small Plates"}], "rating": 4.0,
+        "coordinates": {"latitude": 47.66351, "longitude": -122.38022}, "transactions":
+        ["delivery"], "price": "$$", "location": {"address1": "4743 Ballard Ave NW",
+        "address2": "", "address3": "", "city": "Seattle", "zip_code": "98107", "country":
+        "US", "state": "WA", "display_address": ["4743 Ballard Ave NW", "Seattle,
+        WA 98107"]}, "phone": "+12063959227", "display_phone": "(206) 395-9227", "distance":
+        5402.217414076959}, {"id": "wV8PCmlBs-P8XrkLm7-HQw", "alias": "kuzmas-fish-market-edmonds-2",
+        "name": "Kuzma''s Fish Market", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/I5m3SCJPeeGqeLq3KtpAWg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/kuzmas-fish-market-edmonds-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 116, "categories": [{"alias": "seafoodmarkets", "title": "Seafood
+        Markets"}], "rating": 5.0, "coordinates": {"latitude": 47.80766, "longitude":
+        -122.32768}, "transactions": [], "price": "$$", "location": {"address1": "21104
+        70th Ave W", "address2": "Ste B", "address3": "", "city": "Edmonds", "zip_code":
+        "98026", "country": "US", "state": "WA", "display_address": ["21104 70th Ave
+        W", "Ste B", "Edmonds, WA 98026"]}, "phone": "+14255828521", "display_phone":
+        "(425) 582-8521", "distance": 20287.816304507905}, {"id": "QKIH0ALmEGsRuFRDRRn9oQ",
+        "alias": "wallys-chowder-house-and-broiler-des-moines", "name": "Wally''s
+        Chowder House & Broiler", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/gjj2LpUDseMGs9gMSk-9SA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wallys-chowder-house-and-broiler-des-moines?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 1383, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "fishnchips", "title": "Fish & Chips"}, {"alias": "soup", "title":
+        "Soup"}], "rating": 4.5, "coordinates": {"latitude": 47.39945, "longitude":
+        -122.32482}, "transactions": ["delivery"], "price": "$$", "location": {"address1":
+        "22531 Marine View Dr S", "address2": "", "address3": "", "city": "Des Moines",
+        "zip_code": "98198", "country": "US", "state": "WA", "display_address": ["22531
+        Marine View Dr S", "Des Moines, WA 98198"]}, "phone": "+12068788140", "display_phone":
+        "(206) 878-8140", "distance": 25129.333690421317}, {"id": "p1TOF1XkXzLx3a-LF3lDlw",
+        "alias": "taylor-shellfish-oyster-bar-seattle-2", "name": "Taylor Shellfish
+        Oyster Bar", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/he49IR0G1wrjO1WI-fxkAg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/taylor-shellfish-oyster-bar-seattle-2?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 733, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "raw_food", "title": "Live/Raw Food"}], "rating": 4.5, "coordinates":
+        {"latitude": 47.59884, "longitude": -122.33268}, "transactions": ["delivery"],
+        "price": "$$", "location": {"address1": "410 Occidental Ave S", "address2":
+        "", "address3": "", "city": "Seattle", "zip_code": "98104", "country": "US",
+        "state": "WA", "display_address": ["410 Occidental Ave S", "Seattle, WA 98104"]},
+        "phone": "+12065014060", "display_phone": "(206) 501-4060", "distance": 2963.919833488465},
+        {"id": "hygivmZmOdtuhCSp2DciFw", "alias": "wild-salmon-seafood-market-seattle",
+        "name": "Wild Salmon Seafood Market", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/1-hLwGXQZrRIKgzIPP059Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/wild-salmon-seafood-market-seattle?adjust_creative=9OGAZM6oIqzohErPw71EeQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9OGAZM6oIqzohErPw71EeQ",
+        "review_count": 58, "categories": [{"alias": "seafoodmarkets", "title": "Seafood
+        Markets"}], "rating": 4.5, "coordinates": {"latitude": 47.6555863, "longitude":
+        -122.3809713}, "transactions": [], "price": "$$", "location": {"address1":
+        "1900 W Nickerson St", "address2": "", "address3": "", "city": "Seattle",
+        "zip_code": "98119", "country": "US", "state": "WA", "display_address": ["1900
+        W Nickerson St", "Seattle, WA 98119"]}, "phone": "+12062833366", "display_phone":
+        "(206) 283-3366", "distance": 4780.479151144002}], "total": 2200, "region":
+        {"center": {"longitude": -122.33551025390625, "latitude": 47.62541904760501}}}'
+  recorded_at: Mon, 08 Mar 2021 16:37:29 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=denver,co&key=<MAP_QUEST_KEY>&to=seattle,wa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 08 Mar 2021 16:37:29 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=1162B3986F5A185C4E678A18495978C9; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Mon, 08 Mar 2021 16:37:29 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyb3V0ZSI6eyJoYXNUb2xsUm9hZCI6ZmFsc2UsImhhc0JyaWRnZSI6dHJ1ZSwiYm91bmRpbmdCb3giOnsibHIiOnsibG5nIjotMTA0Ljg1MDc1NCwibGF0IjozOS43Mzg0NTN9LCJ1bCI6eyJsbmciOi0xMjIuMzMwMjc2LCJsYXQiOjQ3LjYwNDYxNH19LCJkaXN0YW5jZSI6MTMzMy42MTQxLCJoYXNUaW1lZFJlc3RyaWN0aW9uIjpmYWxzZSwiaGFzVHVubmVsIjp0cnVlLCJoYXNIaWdod2F5Ijp0cnVlLCJjb21wdXRlZFdheXBvaW50cyI6W10sInJvdXRlRXJyb3IiOnsiZXJyb3JDb2RlIjotNDAwLCJtZXNzYWdlIjoiIn0sImZvcm1hdHRlZFRpbWUiOiIxODoyNDoyNyIsInNlc3Npb25JZCI6IjYwNDY1MmM5LTAyZGMtNWYyMS0wMmI0LTMzMDgtMGFiNzZlZjY2MDVkIiwiaGFzQWNjZXNzUmVzdHJpY3Rpb24iOmZhbHNlLCJyZWFsVGltZSI6MTAwMDAwMDAsImhhc1NlYXNvbmFsQ2xvc3VyZSI6ZmFsc2UsImhhc0NvdW50cnlDcm9zcyI6ZmFsc2UsImZ1ZWxVc2VkIjo3MC41NywibGVncyI6W3siaGFzVG9sbFJvYWQiOmZhbHNlLCJoYXNCcmlkZ2UiOnRydWUsImRlc3ROYXJyYXRpdmUiOiJQcm9jZWVkIHRvIFNFQVRUTEUsIFdBLiIsImRpc3RhbmNlIjoxMzMzLjYxNDEsImhhc1RpbWVkUmVzdHJpY3Rpb24iOmZhbHNlLCJoYXNUdW5uZWwiOnRydWUsImhhc0hpZ2h3YXkiOnRydWUsImluZGV4IjowLCJmb3JtYXR0ZWRUaW1lIjoiMTg6MjQ6MjciLCJvcmlnSW5kZXgiOjIsImhhc0FjY2Vzc1Jlc3RyaWN0aW9uIjpmYWxzZSwiaGFzU2Vhc29uYWxDbG9zdXJlIjpmYWxzZSwiaGFzQ291bnRyeUNyb3NzIjpmYWxzZSwicm9hZEdyYWRlU3RyYXRlZ3kiOltbXV0sImRlc3RJbmRleCI6OSwidGltZSI6NjYyNjcsImhhc1VucGF2ZWQiOmZhbHNlLCJvcmlnTmFycmF0aXZlIjoiR28gd2VzdCBvbiBFIENvbGZheCBBdmUvSS03MCBCdXMgVy9VUy00MCBXL1VTLTI4NyBOLiIsIm1hbmV1dmVycyI6W3siZGlzdGFuY2UiOjAuMTM1LCJzdHJlZXRzIjpbIkUgMTR0aCBBdmUiXSwibmFycmF0aXZlIjoiU3RhcnQgb3V0IGdvaW5nIGVhc3Qgb24gRSAxNHRoIEF2ZSB0b3dhcmQgTiBHcmFudCBTdC4iLCJ0dXJuVHlwZSI6MCwic3RhcnRQb2ludCI6eyJsbmciOi0xMDQuOTg0ODU2LCJsYXQiOjM5LjczODQ1M30sImluZGV4IjowLCJmb3JtYXR0ZWRUaW1lIjoiMDA6MDA6MjMiLCJkaXJlY3Rpb25OYW1lIjoiRWFzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOltdLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz0zOS43Mzg0NTI5MTEzNzY5NSwtMTA0Ljk4NDg1NTY1MTg1NTQ3fG1hcmtlci0xfHwzOS43Mzg0NTI5MTEzNzY5NSwtMTA0Ljk4MjMyMjY5Mjg3MTF8bWFya2VyLTJ8fCZjZW50ZXI9MzkuNzM4NDUyOTExMzc2OTUsLTEwNC45ODM1ODkxNzIzNjMyOCZkZWZhdWx0TWFya2VyPW5vbmUmem9vbT0xMyZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MCwidGltZSI6MjMsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9pY29uLWRpcnMtc3RhcnRfc20uZ2lmIiwiZGlyZWN0aW9uIjo4fSx7ImRpc3RhbmNlIjowLjExLCJzdHJlZXRzIjpbIk4gTG9nYW4gU3QiXSwibmFycmF0aXZlIjoiVHVybiBsZWZ0IG9udG8gTiBMb2dhbiBTdC4iLCJ0dXJuVHlwZSI6Niwic3RhcnRQb2ludCI6eyJsbmciOi0xMDQuOTgyMzIzLCJsYXQiOjM5LjczODQ1M30sImluZGV4IjoxLCJmb3JtYXR0ZWRUaW1lIjoiMDA6MDA6MjEiLCJkaXJlY3Rpb25OYW1lIjoiTm9ydGgiLCJtYW5ldXZlck5vdGVzIjpbXSwibGlua0lkcyI6W10sInNpZ25zIjpbXSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9MzkuNzM4NDUyOTExMzc2OTUsLTEwNC45ODIzMjI2OTI4NzExfG1hcmtlci0yfHwzOS43NDAwNDc0NTQ4MzM5ODQsLTEwNC45ODIzMzc5NTE2NjAxNnxtYXJrZXItM3x8JmNlbnRlcj0zOS43MzkyNTAxODMxMDU0NywtMTA0Ljk4MjMzMDMyMjI2NTYyJmRlZmF1bHRNYXJrZXI9bm9uZSZ6b29tPTEyJnJhbmQ9MTkwNjE0MzU2OSZzZXNzaW9uPTYwNDY1MmM5LTAyZGMtNWYyMS0wMmI0LTMzMDgtMGFiNzZlZjY2MDVkIiwidHJhbnNwb3J0TW9kZSI6IkFVVE8iLCJhdHRyaWJ1dGVzIjowLCJ0aW1lIjoyMSwiaWNvblVybCI6Imh0dHA6Ly9jb250ZW50Lm1xY2RuLmNvbS9tcXNpdGUvdHVybnNpZ25zL3JzX2xlZnRfc20uZ2lmIiwiZGlyZWN0aW9uIjoxfSx7ImRpc3RhbmNlIjoxLjQ4Miwic3RyZWV0cyI6WyJFIENvbGZheCBBdmUiLCJJLTcwIEJ1cyBXIiwiVVMtNDAgVyIsIlVTLTI4NyBOIl0sIm5hcnJhdGl2ZSI6IlR1cm4gbGVmdCBvbnRvIEUgQ29sZmF4IEF2ZS9JLTcwIEJ1cyBXL1VTLTQwIFcvVVMtMjg3IE4uIiwidHVyblR5cGUiOjYsInN0YXJ0UG9pbnQiOnsibG5nIjotMTA0Ljk4MjMzOCwibGF0IjozOS43NDAwNDd9LCJpbmRleCI6MiwiZm9ybWF0dGVkVGltZSI6IjAwOjAzOjEyIiwiZGlyZWN0aW9uTmFtZSI6Ildlc3QiLCJtYW5ldXZlck5vdGVzIjpbXSwibGlua0lkcyI6W10sInNpZ25zIjpbeyJleHRyYVRleHQiOiIiLCJ0ZXh0IjoiNzAiLCJ0eXBlIjo1LCJ1cmwiOiJodHRwOi8vaWNvbnMubXFjZG4uY29tL2ljb25zL3JzNS5wbmc/bj03MCZkPVdFU1QiLCJkaXJlY3Rpb24iOjd9LHsiZXh0cmFUZXh0IjoiIiwidGV4dCI6IjQwIiwidHlwZSI6MiwidXJsIjoiaHR0cDovL2ljb25zLm1xY2RuLmNvbS9pY29ucy9yczIucG5nP249NDAmZD1XRVNUIiwiZGlyZWN0aW9uIjo3fSx7ImV4dHJhVGV4dCI6IiIsInRleHQiOiIyODciLCJ0eXBlIjoyLCJ1cmwiOiJodHRwOi8vaWNvbnMubXFjZG4uY29tL2ljb25zL3JzMi5wbmc/bj0yODcmZD1OT1JUSCIsImRpcmVjdGlvbiI6MX1dLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz0zOS43NDAwNDc0NTQ4MzM5ODQsLTEwNC45ODIzMzc5NTE2NjAxNnxtYXJrZXItM3x8MzkuNzQwMzQ1MDAxMjIwNywtMTA1LjAwOTY4MTcwMTY2MDE2fG1hcmtlci00fHwmY2VudGVyPTM5Ljc0MDE5NjIyODAyNzM0NCwtMTA0Ljk5NjAwOTgyNjY2MDE2JmRlZmF1bHRNYXJrZXI9bm9uZSZ6b29tPTEwJnJhbmQ9MTkwNjE0MzU2OSZzZXNzaW9uPTYwNDY1MmM5LTAyZGMtNWYyMS0wMmI0LTMzMDgtMGFiNzZlZjY2MDVkIiwidHJhbnNwb3J0TW9kZSI6IkFVVE8iLCJhdHRyaWJ1dGVzIjoxMDI0LCJ0aW1lIjoxOTIsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19sZWZ0X3NtLmdpZiIsImRpcmVjdGlvbiI6N30seyJkaXN0YW5jZSI6MC4xMDEsInN0cmVldHMiOltdLCJuYXJyYXRpdmUiOiJUYWtlIHRoZSByYW1wIHRvd2FyZCBJLTI1L0Z0IENvbGxpbnMvQ29sbyBTcGdzLiIsInR1cm5UeXBlIjoxMiwic3RhcnRQb2ludCI6eyJsbmciOi0xMDUuMDA5NjgyLCJsYXQiOjM5Ljc0MDM0NX0sImluZGV4IjozLCJmb3JtYXR0ZWRUaW1lIjoiMDA6MDA6MTIiLCJkaXJlY3Rpb25OYW1lIjoiV2VzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOltdLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz0zOS43NDAzNDUwMDEyMjA3LC0xMDUuMDA5NjgxNzAxNjYwMTZ8bWFya2VyLTR8fDM5Ljc0MDU3MDA2ODM1OTM3NSwtMTA1LjAxMTU1ODUzMjcxNDg0fG1hcmtlci01fHwmY2VudGVyPTM5Ljc0MDQ1NzUzNDc5MDA0LC0xMDUuMDEwNjIwMTE3MTg3NSZkZWZhdWx0TWFya2VyPW5vbmUmem9vbT0xNCZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MTAyNCwidGltZSI6MTIsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19yYW1wX3NtLmdpZiIsImRpcmVjdGlvbiI6N30seyJkaXN0YW5jZSI6OTcuNTMzLCJzdHJlZXRzIjpbIkktMjUgTiIsIlVTLTg3IE4iXSwibmFycmF0aXZlIjoiTWVyZ2Ugb250byBJLTI1IE4vVVMtODcgTiB0b3dhcmQgRnQgQ29sbGlucyAoQ3Jvc3NpbmcgaW50byBXeW9taW5nKS4iLCJ0dXJuVHlwZSI6MTAsInN0YXJ0UG9pbnQiOnsibG5nIjotMTA1LjAxMTU1OSwibGF0IjozOS43NDA1N30sImluZGV4Ijo0LCJmb3JtYXR0ZWRUaW1lIjoiMDE6MjM6MzUiLCJkaXJlY3Rpb25OYW1lIjoiTm9ydGgiLCJtYW5ldXZlck5vdGVzIjpbXSwibGlua0lkcyI6W10sInNpZ25zIjpbeyJleHRyYVRleHQiOiIiLCJ0ZXh0IjoiMjUiLCJ0eXBlIjoxLCJ1cmwiOiJodHRwOi8vaWNvbnMubXFjZG4uY29tL2ljb25zL3JzMS5wbmc/bj0yNSZkPU5PUlRIIiwiZGlyZWN0aW9uIjoxfSx7ImV4dHJhVGV4dCI6IiIsInRleHQiOiI4NyIsInR5cGUiOjIsInVybCI6Imh0dHA6Ly9pY29ucy5tcWNkbi5jb20vaWNvbnMvcnMyLnBuZz9uPTg3JmQ9Tk9SVEgiLCJkaXJlY3Rpb24iOjF9XSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9MzkuNzQwNTcwMDY4MzU5Mzc1LC0xMDUuMDExNTU4NTMyNzE0ODR8bWFya2VyLTV8fDQxLjExNDQ3OTA2NDk0MTQwNiwtMTA0Ljg1MDc1Mzc4NDE3OTY5fG1hcmtlci02fHwmY2VudGVyPTQwLjQyNzUyNDU2NjY1MDM5LC0xMDQuOTMxMTU2MTU4NDQ3MjcmZGVmYXVsdE1hcmtlcj1ub25lJnpvb209MyZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MTE1MiwidGltZSI6NTAxNSwiaWNvblVybCI6Imh0dHA6Ly9jb250ZW50Lm1xY2RuLmNvbS9tcXNpdGUvdHVybnNpZ25zL3JzX21lcmdlX3JpZ2h0X3NtLmdpZiIsImRpcmVjdGlvbiI6MX0seyJkaXN0YW5jZSI6Mzg4Ljc2OCwic3RyZWV0cyI6WyJJLTgwIFciXSwibmFycmF0aXZlIjoiTWVyZ2Ugb250byBJLTgwIFcgdmlhIEVYSVQgOEIgdG93YXJkIExhcmFtaWUgKENyb3NzaW5nIGludG8gVXRhaCkuIiwidHVyblR5cGUiOjEwLCJzdGFydFBvaW50Ijp7ImxuZyI6LTEwNC44NTA3NTQsImxhdCI6NDEuMTE0NDc5fSwiaW5kZXgiOjUsImZvcm1hdHRlZFRpbWUiOiIwNTowNjozNSIsImRpcmVjdGlvbk5hbWUiOiJXZXN0IiwibWFuZXV2ZXJOb3RlcyI6W10sImxpbmtJZHMiOltdLCJzaWducyI6W3siZXh0cmFUZXh0IjoiIiwidGV4dCI6IjgwIiwidHlwZSI6MSwidXJsIjoiaHR0cDovL2ljb25zLm1xY2RuLmNvbS9pY29ucy9yczEucG5nP249ODAmZD1XRVNUIiwiZGlyZWN0aW9uIjo3fSx7ImV4dHJhVGV4dCI6IiIsInRleHQiOiI4QiIsInR5cGUiOjEwMDEsInVybCI6Imh0dHA6Ly9pY29ucy5tcWNkbi5jb20vaWNvbnMvcnMxMDAxLnBuZz9uPThCJmQ9UklHSFQiLCJkaXJlY3Rpb24iOjB9XSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9NDEuMTE0NDc5MDY0OTQxNDA2LC0xMDQuODUwNzUzNzg0MTc5Njl8bWFya2VyLTZ8fDQwLjk3MjEwMzExODg5NjQ4NCwtMTExLjQzNjk4ODgzMDU2NjR8bWFya2VyLTd8fCZjZW50ZXI9NDEuMDQzMjkxMDkxOTE4OTQ1LC0xMDguMTQzODcxMzA3MzczMDUmZGVmYXVsdE1hcmtlcj1ub25lJnpvb209MiZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MTE1MiwidGltZSI6MTgzOTUsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19tZXJnZV9yaWdodF9zbS5naWYiLCJkaXJlY3Rpb24iOjd9LHsiZGlzdGFuY2UiOjU5Mi45MjksInN0cmVldHMiOlsiSS04NCBXIl0sIm5hcnJhdGl2ZSI6Ik1lcmdlIG9udG8gSS04NCBXIHZpYSBFWElUIDE2OCB0b3dhcmQgT2dkZW4gKFBhc3NpbmcgdGhyb3VnaCBJZGFobywgdGhlbiBjcm9zc2luZyBpbnRvIE9yZWdvbikuIiwidHVyblR5cGUiOjEwLCJzdGFydFBvaW50Ijp7ImxuZyI6LTExMS40MzY5ODksImxhdCI6NDAuOTcyMTAzfSwiaW5kZXgiOjYsImZvcm1hdHRlZFRpbWUiOiIwODowNToxNyIsImRpcmVjdGlvbk5hbWUiOiJXZXN0IiwibWFuZXV2ZXJOb3RlcyI6W10sImxpbmtJZHMiOltdLCJzaWducyI6W3siZXh0cmFUZXh0IjoiIiwidGV4dCI6Ijg0IiwidHlwZSI6MSwidXJsIjoiaHR0cDovL2ljb25zLm1xY2RuLmNvbS9pY29ucy9yczEucG5nP249ODQmZD1XRVNUIiwiZGlyZWN0aW9uIjo3fSx7ImV4dHJhVGV4dCI6IiIsInRleHQiOiIxNjgiLCJ0eXBlIjoxMDAxLCJ1cmwiOiJodHRwOi8vaWNvbnMubXFjZG4uY29tL2ljb25zL3JzMTAwMS5wbmc/bj0xNjgmZD1SSUdIVCIsImRpcmVjdGlvbiI6MH1dLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz00MC45NzIxMDMxMTg4OTY0ODQsLTExMS40MzY5ODg4MzA1NjY0fG1hcmtlci03fHw0NS43OTQwMjU0MjExNDI1OCwtMTE5LjM4NDY4OTMzMTA1NDY5fG1hcmtlci04fHwmY2VudGVyPTQzLjM4MzA2NDI3MDAxOTUzLC0xMTUuNDEwODM5MDgwODEwNTUmZGVmYXVsdE1hcmtlcj1ub25lJnpvb209MiZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MTE1MiwidGltZSI6MjkxMTcsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19tZXJnZV9yaWdodF9zbS5naWYiLCJkaXJlY3Rpb24iOjd9LHsiZGlzdGFuY2UiOjE0Mi41MzgsInN0cmVldHMiOlsiSS04MiBXIl0sIm5hcnJhdGl2ZSI6Ik1lcmdlIG9udG8gSS04MiBXIHZpYSBFWElUIDE3OSB0b3dhcmQgVW1hdGlsbGEvS2VubmV3aWNrIChDcm9zc2luZyBpbnRvIFdhc2hpbmd0b24pLiIsInR1cm5UeXBlIjoxMCwic3RhcnRQb2ludCI6eyJsbmciOi0xMTkuMzg0Njg5LCJsYXQiOjQ1Ljc5NDAyNX0sImluZGV4Ijo3LCJmb3JtYXR0ZWRUaW1lIjoiMDI6MDU6MzkiLCJkaXJlY3Rpb25OYW1lIjoiV2VzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOlt7ImV4dHJhVGV4dCI6IiIsInRleHQiOiI4MiIsInR5cGUiOjEsInVybCI6Imh0dHA6Ly9pY29ucy5tcWNkbi5jb20vaWNvbnMvcnMxLnBuZz9uPTgyJmQ9V0VTVCIsImRpcmVjdGlvbiI6N30seyJleHRyYVRleHQiOiIiLCJ0ZXh0IjoiMTc5IiwidHlwZSI6MTAwMSwidXJsIjoiaHR0cDovL2ljb25zLm1xY2RuLmNvbS9pY29ucy9yczEwMDEucG5nP249MTc5JmQ9UklHSFQiLCJkaXJlY3Rpb24iOjB9XSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9NDUuNzk0MDI1NDIxMTQyNTgsLTExOS4zODQ2ODkzMzEwNTQ2OXxtYXJrZXItOHx8NDYuOTY0NTM4NTc0MjE4NzUsLTEyMC41MDc0OTk2OTQ4MjQyMnxtYXJrZXItOXx8JmNlbnRlcj00Ni4zNzkyODE5OTc2ODA2NjQsLTExOS45NDYwOTQ1MTI5Mzk0NSZkZWZhdWx0TWFya2VyPW5vbmUmem9vbT0zJnJhbmQ9MTkwNjE0MzU2OSZzZXNzaW9uPTYwNDY1MmM5LTAyZGMtNWYyMS0wMmI0LTMzMDgtMGFiNzZlZjY2MDVkIiwidHJhbnNwb3J0TW9kZSI6IkFVVE8iLCJhdHRyaWJ1dGVzIjoxMTUyLCJ0aW1lIjo3NTM5LCJpY29uVXJsIjoiaHR0cDovL2NvbnRlbnQubXFjZG4uY29tL21xc2l0ZS90dXJuc2lnbnMvcnNfbWVyZ2VfcmlnaHRfc20uZ2lmIiwiZGlyZWN0aW9uIjo3fSx7ImRpc3RhbmNlIjoxMDguODM2LCJzdHJlZXRzIjpbIkktOTAgVyJdLCJuYXJyYXRpdmUiOiJNZXJnZSBvbnRvIEktOTAgVyB2aWEgdGhlIGV4aXQgb24gdGhlIGxlZnQuIiwidHVyblR5cGUiOjExLCJzdGFydFBvaW50Ijp7ImxuZyI6LTEyMC41MDc1LCJsYXQiOjQ2Ljk2NDUzOX0sImluZGV4Ijo4LCJmb3JtYXR0ZWRUaW1lIjoiMDE6MzY6NTgiLCJkaXJlY3Rpb25OYW1lIjoiV2VzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOlt7ImV4dHJhVGV4dCI6IiIsInRleHQiOiI5MCIsInR5cGUiOjEsInVybCI6Imh0dHA6Ly9pY29ucy5tcWNkbi5jb20vaWNvbnMvcnMxLnBuZz9uPTkwJmQ9V0VTVCIsImRpcmVjdGlvbiI6N31dLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz00Ni45NjQ1Mzg1NzQyMTg3NSwtMTIwLjUwNzQ5OTY5NDgyNDIyfG1hcmtlci05fHw0Ny41OTQ5NDc4MTQ5NDE0MDYsLTEyMi4zMTQzMjM0MjUyOTI5N3xtYXJrZXItMTB8fCZjZW50ZXI9NDcuMjc5NzQzMTk0NTgwMDgsLTEyMS40MTA5MTE1NjAwNTg2JmRlZmF1bHRNYXJrZXI9bm9uZSZ6b29tPTQmcmFuZD0xOTA2MTQzNTY5JnNlc3Npb249NjA0NjUyYzktMDJkYy01ZjIxLTAyYjQtMzMwOC0wYWI3NmVmNjYwNWQiLCJ0cmFuc3BvcnRNb2RlIjoiQVVUTyIsImF0dHJpYnV0ZXMiOjMyMDAsInRpbWUiOjU4MTgsImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19tZXJnZV9sZWZ0X3NtLmdpZiIsImRpcmVjdGlvbiI6N30seyJkaXN0YW5jZSI6MC43MjQsInN0cmVldHMiOltdLCJuYXJyYXRpdmUiOiJUYWtlIHRoZSBJLTUgTiBleGl0LCBFWElUIDJDLCB0b3dhcmQgVmFuY291dmVyIEIgQy4iLCJ0dXJuVHlwZSI6MTQsInN0YXJ0UG9pbnQiOnsibG5nIjotMTIyLjMxNDMyMywibGF0Ijo0Ny41OTQ5NDh9LCJpbmRleCI6OSwiZm9ybWF0dGVkVGltZSI6IjAwOjAxOjA0IiwiZGlyZWN0aW9uTmFtZSI6Ik5vcnRod2VzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOlt7ImV4dHJhVGV4dCI6IiIsInRleHQiOiIyQyIsInR5cGUiOjEwMDEsInVybCI6Imh0dHA6Ly9pY29ucy5tcWNkbi5jb20vaWNvbnMvcnMxMDAxLnBuZz9uPTJDJmQ9UklHSFQiLCJkaXJlY3Rpb24iOjB9XSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9NDcuNTk0OTQ3ODE0OTQxNDA2LC0xMjIuMzE0MzIzNDI1MjkyOTd8bWFya2VyLTEwfHw0Ny42MDEyODQwMjcwOTk2MSwtMTIyLjMyMzY5OTk1MTE3MTg4fG1hcmtlci0xMXx8JmNlbnRlcj00Ny41OTgxMTU5MjEwMjA1MSwtMTIyLjMxOTAxMTY4ODIzMjQyJmRlZmF1bHRNYXJrZXI9bm9uZSZ6b29tPTEwJnJhbmQ9MTkwNjE0MzU2OSZzZXNzaW9uPTYwNDY1MmM5LTAyZGMtNWYyMS0wMmI0LTMzMDgtMGFiNzZlZjY2MDVkIiwidHJhbnNwb3J0TW9kZSI6IkFVVE8iLCJhdHRyaWJ1dGVzIjoxMDI0LCJ0aW1lIjo2NCwiaWNvblVybCI6Imh0dHA6Ly9jb250ZW50Lm1xY2RuLmNvbS9tcXNpdGUvdHVybnNpZ25zL3JzX2dyX2V4aXRyaWdodF9zbS5naWYiLCJkaXJlY3Rpb24iOjJ9LHsiZGlzdGFuY2UiOjAuMjc4LCJzdHJlZXRzIjpbXSwibmFycmF0aXZlIjoiS2VlcCByaWdodCB0byB0YWtlIHRoZSBKYW1lcyBTdCByYW1wLiIsInR1cm5UeXBlIjoxMiwic3RhcnRQb2ludCI6eyJsbmciOi0xMjIuMzIzNywibGF0Ijo0Ny42MDEyODR9LCJpbmRleCI6MTAsImZvcm1hdHRlZFRpbWUiOiIwMDowMDozOSIsImRpcmVjdGlvbk5hbWUiOiJOb3J0aHdlc3QiLCJtYW5ldXZlck5vdGVzIjpbXSwibGlua0lkcyI6W10sInNpZ25zIjpbXSwibWFwVXJsIjoiaHR0cDovL3d3dy5tYXBxdWVzdGFwaS5jb20vc3RhdGljbWFwL3Y1L21hcD9rZXk9PE1BUF9RVUVTVF9LRVk+JnNpemU9MjI1LDE2MCZsb2NhdGlvbnM9NDcuNjAxMjg0MDI3MDk5NjEsLTEyMi4zMjM2OTk5NTExNzE4OHxtYXJrZXItMTF8fDQ3LjYwNDYxNDI1NzgxMjUsLTEyMi4zMjcwMDM0NzkwMDM5fG1hcmtlci0xMnx8JmNlbnRlcj00Ny42MDI5NDkxNDI0NTYwNTUsLTEyMi4zMjUzNTE3MTUwODc4OSZkZWZhdWx0TWFya2VyPW5vbmUmem9vbT0xMSZyYW5kPTE5MDYxNDM1Njkmc2Vzc2lvbj02MDQ2NTJjOS0wMmRjLTVmMjEtMDJiNC0zMzA4LTBhYjc2ZWY2NjA1ZCIsInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MCwidGltZSI6MzksImljb25VcmwiOiJodHRwOi8vY29udGVudC5tcWNkbi5jb20vbXFzaXRlL3R1cm5zaWducy9yc19yYW1wX3NtLmdpZiIsImRpcmVjdGlvbiI6Mn0seyJkaXN0YW5jZSI6MC4xOCwic3RyZWV0cyI6WyJKYW1lcyBTdCJdLCJuYXJyYXRpdmUiOiJUdXJuIGxlZnQgb250byBKYW1lcyBTdC4iLCJ0dXJuVHlwZSI6Niwic3RhcnRQb2ludCI6eyJsbmciOi0xMjIuMzI3MDAzLCJsYXQiOjQ3LjYwNDYxNH0sImluZGV4IjoxMSwiZm9ybWF0dGVkVGltZSI6IjAwOjAwOjMyIiwiZGlyZWN0aW9uTmFtZSI6IlNvdXRod2VzdCIsIm1hbmV1dmVyTm90ZXMiOltdLCJsaW5rSWRzIjpbXSwic2lnbnMiOltdLCJtYXBVcmwiOiJodHRwOi8vd3d3Lm1hcHF1ZXN0YXBpLmNvbS9zdGF0aWNtYXAvdjUvbWFwP2tleT08TUFQX1FVRVNUX0tFWT4mc2l6ZT0yMjUsMTYwJmxvY2F0aW9ucz00Ny42MDQ2MTQyNTc4MTI1LC0xMjIuMzI3MDAzNDc5MDAzOXxtYXJrZXItMTJ8fDQ3LjYwMzIyOTUyMjcwNTA4LC0xMjIuMzMwMjc2NDg5MjU3ODF8bWFya2VyLTEzfHwmY2VudGVyPTQ3LjYwMzkyMTg5MDI1ODc5LC0xMjIuMzI4NjM5OTg0MTMwODYmZGVmYXVsdE1hcmtlcj1ub25lJnpvb209MTMmcmFuZD0xOTA2MTQzNTY5JnNlc3Npb249NjA0NjUyYzktMDJkYy01ZjIxLTAyYjQtMzMwOC0wYWI3NmVmNjYwNWQiLCJ0cmFuc3BvcnRNb2RlIjoiQVVUTyIsImF0dHJpYnV0ZXMiOjAsInRpbWUiOjMyLCJpY29uVXJsIjoiaHR0cDovL2NvbnRlbnQubXFjZG4uY29tL21xc2l0ZS90dXJuc2lnbnMvcnNfbGVmdF9zbS5naWYiLCJkaXJlY3Rpb24iOjZ9LHsiZGlzdGFuY2UiOjAsInN0cmVldHMiOltdLCJuYXJyYXRpdmUiOiJXZWxjb21lIHRvIFNFQVRUTEUsIFdBLiIsInR1cm5UeXBlIjotMSwic3RhcnRQb2ludCI6eyJsbmciOi0xMjIuMzMwMjc2LCJsYXQiOjQ3LjYwMzIzfSwiaW5kZXgiOjEyLCJmb3JtYXR0ZWRUaW1lIjoiMDA6MDA6MDAiLCJkaXJlY3Rpb25OYW1lIjoiIiwibWFuZXV2ZXJOb3RlcyI6W10sImxpbmtJZHMiOltdLCJzaWducyI6W10sInRyYW5zcG9ydE1vZGUiOiJBVVRPIiwiYXR0cmlidXRlcyI6MCwidGltZSI6MCwiaWNvblVybCI6Imh0dHA6Ly9jb250ZW50Lm1xY2RuLmNvbS9tcXNpdGUvdHVybnNpZ25zL2ljb24tZGlycy1lbmRfc20uZ2lmIiwiZGlyZWN0aW9uIjowfV0sImhhc0ZlcnJ5IjpmYWxzZX1dLCJvcHRpb25zIjp7ImFydGVyeVdlaWdodHMiOltdLCJjeWNsaW5nUm9hZEZhY3RvciI6MSwidGltZVR5cGUiOjAsInVzZVRyYWZmaWMiOmZhbHNlLCJyZXR1cm5MaW5rRGlyZWN0aW9ucyI6ZmFsc2UsImNvdW50cnlCb3VuZGFyeURpc3BsYXkiOnRydWUsImVuaGFuY2VkTmFycmF0aXZlIjpmYWxzZSwibG9jYWxlIjoiZW5fVVMiLCJ0cnlBdm9pZExpbmtJZHMiOltdLCJkcml2aW5nU3R5bGUiOjIsImRvUmV2ZXJzZUdlb2NvZGUiOnRydWUsImdlbmVyYWxpemUiOi0xLCJtdXN0QXZvaWRMaW5rSWRzIjpbXSwic2lkZU9mU3RyZWV0RGlzcGxheSI6dHJ1ZSwicm91dGVUeXBlIjoiRkFTVEVTVCIsImF2b2lkVGltZWRDb25kaXRpb25zIjpmYWxzZSwicm91dGVOdW1iZXIiOjAsInNoYXBlRm9ybWF0IjoicmF3IiwibWF4V2Fsa2luZ0Rpc3RhbmNlIjotMSwiZGVzdGluYXRpb25NYW5ldXZlckRpc3BsYXkiOnRydWUsInRyYW5zZmVyUGVuYWx0eSI6LTEsIm5hcnJhdGl2ZVR5cGUiOiJ0ZXh0Iiwid2Fsa2luZ1NwZWVkIjotMSwidXJiYW5Bdm9pZEZhY3RvciI6LTEsInN0YXRlQm91bmRhcnlEaXNwbGF5Ijp0cnVlLCJ1bml0IjoiTSIsImhpZ2h3YXlFZmZpY2llbmN5IjoyMiwibWF4TGlua0lkIjowLCJtYW5ldXZlclBlbmFsdHkiOi0xLCJhdm9pZFRyaXBJZHMiOltdLCJmaWx0ZXJab25lRmFjdG9yIjotMSwibWFubWFwcyI6InRydWUifSwibG9jYXRpb25zIjpbeyJkcmFnUG9pbnQiOmZhbHNlLCJkaXNwbGF5TGF0TG5nIjp7ImxuZyI6LTEwNC45ODQ4NTYsImxhdCI6MzkuNzM4NDUzfSwiYWRtaW5BcmVhNCI6IkRlbnZlciBDb3VudHkiLCJhZG1pbkFyZWE1IjoiRGVudmVyIiwicG9zdGFsQ29kZSI6IiIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTMiOiJDTyIsInR5cGUiOiJzIiwic2lkZU9mU3RyZWV0IjoiTiIsImdlb2NvZGVRdWFsaXR5Q29kZSI6IkE1WEFYIiwiYWRtaW5BcmVhNFR5cGUiOiJDb3VudHkiLCJsaW5rSWQiOjQwMjg3ODE5LCJzdHJlZXQiOiIiLCJhZG1pbkFyZWE1VHlwZSI6IkNpdHkiLCJnZW9jb2RlUXVhbGl0eSI6IkNJVFkiLCJhZG1pbkFyZWExVHlwZSI6IkNvdW50cnkiLCJhZG1pbkFyZWEzVHlwZSI6IlN0YXRlIiwibGF0TG5nIjp7ImxuZyI6LTEwNC45ODQ4NTMsImxhdCI6MzkuNzM4NDUzfX0seyJkcmFnUG9pbnQiOmZhbHNlLCJkaXNwbGF5TGF0TG5nIjp7ImxuZyI6LTEyMi4zMzAyNzYsImxhdCI6NDcuNjAzMjN9LCJhZG1pbkFyZWE0IjoiS2luZyBDb3VudHkiLCJhZG1pbkFyZWE1IjoiU2VhdHRsZSIsInBvc3RhbENvZGUiOiIiLCJhZG1pbkFyZWExIjoiVVMiLCJhZG1pbkFyZWEzIjoiV0EiLCJ0eXBlIjoicyIsInNpZGVPZlN0cmVldCI6Ik4iLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwibGlua0lkIjoyMzI1OTczNiwic3RyZWV0IjoiIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiZ2VvY29kZVF1YWxpdHkiOiJDSVRZIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImxhdExuZyI6eyJsbmciOi0xMjIuMzMwMjgsImxhdCI6NDcuNjAzMjI5fX1dLCJ0aW1lIjo2NjI2NywiaGFzVW5wYXZlZCI6ZmFsc2UsImxvY2F0aW9uU2VxdWVuY2UiOlswLDFdLCJoYXNGZXJyeSI6ZmFsc2V9LCJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX19
+  recorded_at: Mon, 08 Mar 2021 16:37:29 GMT
+recorded_with: VCR 6.0.0
