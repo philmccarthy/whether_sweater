@@ -109,16 +109,35 @@ describe 'Forecast Request' do
     describe 'Sad Path' do
       it 'responds with an error if no location parameter is given' do
         get "/api/v1/forecast?location="
+        
         expect(response).to_not be_successful
+        expect(response.status).to eq(400)
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(parsed_response).to be_a Hash
-        expect(parsed_response.keys).to eq([:message, :errors])
-        expect(parsed_response[:message]).to be_a String
-        expect(parsed_response[:message]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+        expect(parsed_response.keys).to eq([:errors])
         expect(parsed_response[:errors]).to be_an Array
-        expect(parsed_response[:errors][0]).to eq('invalid_parameters')
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+      end
+
+      it 'raises an exception if a given a location that cannot be found' do
+        params = { location: 'asldkjfhaslkdfh' }
+        get "/api/v1/forecast?location=#{params[:location]}"
+
+        expect(response).to_not be_successful
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('bad_address')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq("Are you sure that's a valid location? We couldn't find it!")
       end
     end
   end
