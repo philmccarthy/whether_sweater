@@ -8,15 +8,17 @@ module Exceptions
       'invalid_parameters'
     end
   
-    def message
+    def detail
       'Parameters were invalid. Please review the documentation for this endpoint.'
     end
   
     def to_hash
       {
-        message: message,
         errors: [
-          code
+          {
+            code: code,
+            detail: detail
+          }
         ]
       }
     end

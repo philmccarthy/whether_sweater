@@ -10,7 +10,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-require './app/errors/exceptions'
+require './app/errors/invalid_params'
+require './app/errors/bad_address'
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
