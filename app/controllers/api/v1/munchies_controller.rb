@@ -18,7 +18,6 @@ class Api::V1::MunchiesController < ApplicationController
     }
 
     # Restaurant - Yelp Fusion business search
-    
     conn = Faraday.new('https://api.yelp.com/v3/businesses/') do |request|
       request.headers[:authorization] = "Bearer #{ENV['YELP_KEY']}"
     end

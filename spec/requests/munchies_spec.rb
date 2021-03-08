@@ -4,6 +4,9 @@ describe 'Munchies Request' do
   describe 'GET munchies', :vcr do
     describe 'Happy Path' do
       it 'returns a JSON object with proper properties' do
+        time_now = DateTime.strptime('1615224628', '%s')
+        allow(Time).to receive(:now).and_return(time_now)
+        
         params = { start: 'denver,co', destination: 'seattle,wa', food: 'seafood' }
         get "/api/v1/munchies?start=#{params[:start]}&destination=#{params[:destination]}&food=#{params[:food]}"
 
