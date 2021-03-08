@@ -128,6 +128,27 @@ describe 'Users Request' do
           "Password confirmation can't be blank"
         ])
       end
+      
+      it 'doesnt create a user and returns errors if email is already taken' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json'}
+        params = {
+          "email": "whatever@example.com",
+          "password": "password",
+          "password_confirmation": "password"
+        }
+        
+        # First request is successful
+        post '/api/v1/users', headers: headers, params: params.to_json
+
+        expect(User.count).to eq(1)
+        expect(response).to be_successful
+
+        # Second request should fail email uniqueness validation
+        post '/api/v1/users', headers: headers, params: params.to_json
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+        expect(parsed_response[:errors][0]).to eq('Email has already been taken')
+      end
     end
   end
 end
