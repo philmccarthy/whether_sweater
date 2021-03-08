@@ -1,25 +1,12 @@
 class Api::V1::MunchiesController < ApplicationController
   def index
-    # Travel time - MQ Route
-    # response = Faraday.get('http://www.mapquestapi.com/directions/v2/route') do |request|
-    #   request.params[:key] = ENV['MAP_QUEST_KEY']
-    #   request.params[:from] = params[:start]
-    #   request.params[:to] = params[:destination]
-    # end
-    # parsed = JSON.parse(response.body, symbolize_names: true)
-    # travel_time = parsed[:route][:formattedTime]
     travel_time = RouteFacade.get_travel_time(params)
-
-    # Current forecast - Open Weather
     forecast = DestinationForecastFacade.get_forecast(params)
-    # destination = GeocodeFacade.get_geocode(params[:destination])
-    # weather_data = ForecastFacade.get_forecast(destination)
-    # forecast = {
-    #   summary: weather_data.current_weather[:conditions],
-    #   temperature: weather_data.current_weather[:temp].round(0).to_s
-    # }
 
     # Restaurant - Yelp Fusion business search
+    RestaurantSearchFacade.get_recommendation(params, travel_time)
+
+
     conn = Faraday.new('https://api.yelp.com/v3/businesses/') do |request|
       request.headers[:authorization] = "Bearer #{ENV['YELP_KEY']}"
     end
