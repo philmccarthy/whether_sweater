@@ -14,7 +14,7 @@ class Api::V1::MunchiesController < ApplicationController
     weather_data = ForecastFacade.get_forecast(destination)
     forecast = {
       summary: weather_data.current_weather[:conditions],
-      temperature: weather_data.current_weather[:temp]
+      temperature: weather_data.current_weather[:temp].round(0).to_s
     }
 
     # Restaurant - Yelp Fusion business search
@@ -33,7 +33,10 @@ class Api::V1::MunchiesController < ApplicationController
     end
 
     parsed = JSON.parse(response.body, symbolize_names: true)
-    restaurant = parsed[:businesses][0]
+    restaurant = {
+      name: parsed[:businesses][0][:name],
+      address: parsed[:businesses][0][:location][:display_address].join(', ')
+    }
 
     render json: MunchieSerializer.new(Munchie.new({
       destination_city: params[:destination],
