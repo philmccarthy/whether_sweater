@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 describe 'Munchies Request' do
+  before :each do
+    time_now = DateTime.strptime('1615224628', '%s')
+    allow(Time).to receive(:now).and_return(time_now)
+  end
+
   describe 'GET munchies', :vcr do
     describe 'Happy Path' do
       it 'returns a JSON object with proper properties' do
-        time_now = DateTime.strptime('1615224628', '%s')
-        allow(Time).to receive(:now).and_return(time_now)
         
         params = { start: 'denver,co', destination: 'seattle,wa', food: 'seafood' }
         get "/api/v1/munchies?start=#{params[:start]}&destination=#{params[:destination]}&food=#{params[:food]}"
@@ -43,6 +46,16 @@ describe 'Munchies Request' do
         expect(parsed_response[:data][:attributes][:restaurant].keys).to eq([:name, :address])
         expect(parsed_response[:data][:attributes][:restaurant][:name]).to be_a String
         expect(parsed_response[:data][:attributes][:restaurant][:address]).to be_a String
+      end
+    end
+
+    describe 'Sad Path' do
+      it 'raises an exception if required params are missing' do
+        params = { start: 'denver,co' }
+        get "/api/v1/munchies?start=#{params[:start]}"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
       end
     end
   end
