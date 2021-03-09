@@ -13,8 +13,8 @@ class RoadTrip
 
   def set_weather(forecast)
     @weather_at_eta = forecast.blank? ? {} : {
-      temperature: weather_at_eta[:temp],
-      conditions: weather_at_eta[:conditions]
+      temperature: forecast[:temp],
+      conditions: forecast[:conditions]
     }
   end
 end
