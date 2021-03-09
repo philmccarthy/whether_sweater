@@ -33,11 +33,45 @@ class Forecast
     }
   end
 
-  def at(time)
-    eta = time.strftime('%H:%M').split(/:/).map(&:to_i)
-    eta_hour = eta[1] >= 30 ? eta[0] + 1 : eta[0]
-    hourly_weather.find do |forecast|
-      forecast[:time].include?(eta_hour.to_s)
+  def in(travel_time)
+    # forecast at time...
+    # seconds_from_now = time_to_seconds(time)
+    # time_for_forecast = future_time(time_to_seconds(travel_time))
+    # convert travel time to seconds
+    # calculate ETA as time
+    travel_time_seconds = time_to_seconds(travel_time)
+    if travel_time_seconds < 32400
+      eta = convert(travel_time)
+      eta_hour = eta[1] >= 30 ? eta[0] + 1 : eta[0]
+      hourly_weather.find do |forecast|
+        forecast[:time].include?(eta_hour.to_s)
+      end
+    else
+      arrival_day = Time.current.in(travel_time_seconds).strftime('%b %d, %Y')
+      eta_forecast = daily_weather.find { |forecast| forecast[:date] == arrival_day }
+      {
+        temp: eta_forecast[:max_temp],
+        conditions: eta_forecast[:conditions]
+      }
     end
+  end
+
+  private
+
+  def time_to_seconds(time)
+    time.split(/:/).map(&:to_i).inject(0) do |sum, time_element|
+      sum * 60 + time_element
+    end
+  end
+
+  def convert(time)
+    add_time(time)
+      .strftime('%H:%M')
+      .split(/:/)
+      .map(&:to_i)
+  end
+
+  def add_time(seconds_to_add)
+    Time.at(Time.current.to_i + seconds_to_add)
   end
 end
