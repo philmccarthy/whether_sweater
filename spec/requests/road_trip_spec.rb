@@ -102,6 +102,53 @@ describe 'Road Trip Request' do
         expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_a Hash
         expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_empty
       end
+
+      it 'throws a BadAddress exception if given a location that GeocodeService cant find' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
+        params = {
+          "origin": "Denver,CO",
+          "destination": "askjdfhaskj",
+          "api_key": "jgn983hy48thw9begh98h4539h4"
+        }
+
+        post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('bad_address')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq("Are you sure that's a valid location? We couldn't find it!")
+      end
+
+      it 'throws an InvalidParams exception if either origin or destination are missing' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
+        params = {
+          "origin": "Denver,CO",
+          "api_key": "jgn983hy48thw9begh98h4539h4"
+        }
+
+        post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors]).to be_an Array
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+      end
     end
   end
 end
