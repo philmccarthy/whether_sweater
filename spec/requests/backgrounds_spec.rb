@@ -5,7 +5,8 @@ describe 'Backgrounds Request' do
     describe 'Happy Path' do
       it 'responds with a JSON object with proper properties' do
         params = { location: 'denver' }
-        get "/api/v1/backgrounds?location=#{params[:location]}"
+        get api_v1_backgrounds_path(params)
+        
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
@@ -57,7 +58,9 @@ describe 'Backgrounds Request' do
 
     describe 'Sad Path' do
       it 'responds with an error if no location parameter is given' do
-        get "/api/v1/backgrounds?location="
+        params = { location: '' }
+        get api_v1_backgrounds_path(params)
+        
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
 
@@ -71,6 +74,25 @@ describe 'Backgrounds Request' do
         expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
         expect(parsed_response[:errors][0][:detail]).to be_a String
         expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+      end
+
+      it 'responds with an error if no photo is found' do
+        params = { location: 'siouxfalls' }
+        get api_v1_backgrounds_path(params)
+        
+        expect(response).to_not be_successful
+        expect(response.status).to eq(404)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors]).to be_an Array
+        expect(parsed_response[:errors][0].keys).to eq([:code, :detail])
+        expect(parsed_response[:errors][0][:code]).to be_a String
+        expect(parsed_response[:errors][0][:code]).to eq('not_found')
+        expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq('A resource could not be found for that search term. Try again.')
       end
     end
   end
