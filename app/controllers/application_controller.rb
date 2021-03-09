@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
   rescue_from Exceptions::InvalidParams,
               Exceptions::BadAddress,
               Exceptions::Unauthorized,
+              Exceptions::NotFound,
               with: :render_error_response
 
   def render_error_response(exception)
