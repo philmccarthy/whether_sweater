@@ -17,7 +17,7 @@ describe 'Forecast Request' do
         expect(parsed_response[:data]).to be_a Hash
 
         expect(parsed_response[:data]).to have_key :id
-        expect(parsed_response[:data][:id]).to be_nil
+        expect(parsed_response[:data][:id]).to eq('null')
         
         expect(parsed_response[:data]).to have_key :type
         expect(parsed_response[:data][:type]).to eq('forecast')

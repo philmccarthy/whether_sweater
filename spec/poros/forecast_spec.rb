@@ -29,9 +29,9 @@ RSpec.describe Forecast do
       expect(forecast.daily_weather[0][:date]).to be_a String 
       expect(forecast.daily_weather[0][:date]).to eq("Mar 07, 2021")
       expect(forecast.daily_weather[0][:sunrise]).to be_a String 
-      expect(forecast.daily_weather[0][:sunrise]).to eq("2021-03-07T 1:23:38+0000")
+      expect(forecast.daily_weather[0][:sunrise]).to eq("Sun Mar  7, 06:23")
       expect(forecast.daily_weather[0][:sunset]).to be_a String 
-      expect(forecast.daily_weather[0][:sunset]).to eq("2021-03-08T12:58:24+0000")
+      expect(forecast.daily_weather[0][:sunset]).to eq("Sun Mar  7, 17:58")
       expect(forecast.daily_weather[0][:max_temp]).to be_a Numeric 
       expect(forecast.daily_weather[0][:min_temp]).to be_a Numeric 
       expect(forecast.daily_weather[0][:conditions]).to be_a String
@@ -40,7 +40,7 @@ RSpec.describe Forecast do
       expect(forecast.hourly_weather.size).to eq(8)
       expect(forecast.hourly_weather[0]).to be_a Hash
       expect(forecast.hourly_weather[0][:time]).to be_a String
-      expect(forecast.hourly_weather[0][:time]).to eq("18:00:00")
+      expect(forecast.hourly_weather[0][:time]).to eq("11:00:00")
       expect(forecast.hourly_weather[0][:temp]).to be_a Numeric
       expect(forecast.hourly_weather[0][:conditions]).to be_a String
       expect(forecast.hourly_weather[0][:icon]).to be_a String
