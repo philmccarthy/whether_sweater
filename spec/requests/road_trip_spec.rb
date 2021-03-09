@@ -64,6 +64,7 @@ describe 'Road Trip Request' do
         expect(parsed_response[:data]).to be_a Hash
         expect(parsed_response[:data][:id]).to be_a String
         expect(parsed_response[:data][:type]).to eq('roadtrip')
+
         expect(parsed_response[:data][:attributes][:start_city]).to be_a String
         expect(parsed_response[:data][:attributes][:end_city]).to be_a String
         expect(parsed_response[:data][:attributes][:travel_time]).to be_a String
@@ -75,7 +76,31 @@ describe 'Road Trip Request' do
 
     describe 'Sad Path' do
       it 'returns impossible travel time when the route requested is not really a road trip kind of trip' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
+        params = {
+          "origin": "Denver,CO",
+          "destination": "London,UK",
+          "api_key": "jgn983hy48thw9begh98h4539h4"
+        }
 
+        post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+        expect(response).to be_successful
+        expect(response.status).to eq(201)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response[:data]).to be_a Hash
+        expect(parsed_response[:data][:id]).to be_a String
+        expect(parsed_response[:data][:id]).to eq('null')
+        expect(parsed_response[:data][:type]).to eq('roadtrip')
+        
+        expect(parsed_response[:data][:attributes][:start_city]).to be_a String
+        expect(parsed_response[:data][:attributes][:end_city]).to be_a String
+        expect(parsed_response[:data][:attributes][:travel_time]).to eq('Impossible route')
+        expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_a Hash
+        expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_empty
       end
     end
   end

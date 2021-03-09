@@ -41,7 +41,7 @@ class Forecast
     # calculate ETA as time
     travel_time_seconds = time_to_seconds(travel_time)
     if travel_time_seconds < 32400
-      eta = convert(travel_time)
+      eta = convert(travel_time_seconds)
       eta_hour = eta[1] >= 30 ? eta[0] + 1 : eta[0]
       hourly_weather.find do |forecast|
         forecast[:time].include?(eta_hour.to_s)
