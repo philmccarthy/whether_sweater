@@ -12,6 +12,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 require './app/errors/invalid_params'
 require './app/errors/bad_address'
+require './app/errors/unauthorized'
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
