@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 10 Mar 2021 04:17:47 GMT
+      - Wed, 10 Mar 2021 15:12:19 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Wed, 10 Mar 2021 04:17:47 GMT
+      - Wed, 10 Mar 2021 15:12:19 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=F2EA6AF4E2502D631F952768F673738D; Path=/; HttpOnly
+      - JSESSIONID=0AA53CD94E408BD6BCA76CF6E3154B12; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
-        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"London,UK"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"ENG","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"GB/GEO/p0/3704","unknownInput":"","type":"s","latLng":{"lat":51.50015,"lng":-0.12624},"displayLatLng":{"lat":51.50015,"lng":-0.12624},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<MAP_QUEST_KEY>&type=map&size=225,160&locations=51.50015,-0.12624|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-358977653"}]}]}'
-  recorded_at: Wed, 10 Mar 2021 04:17:47 GMT
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"London,UK"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"ENG","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"GB/GEO/p0/3704","unknownInput":"","type":"s","latLng":{"lat":51.50015,"lng":-0.12624},"displayLatLng":{"lat":51.50015,"lng":-0.12624},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<MAP_QUEST_KEY>&type=map&size=225,160&locations=51.50015,-0.12624|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-132606747"}]}]}'
+  recorded_at: Wed, 10 Mar 2021 15:12:19 GMT
 - request:
     method: get
     uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=<MAP_QUEST_KEY>&to=London,UK
@@ -73,7 +73,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 10 Mar 2021 04:17:47 GMT
+      - Wed, 10 Mar 2021 15:12:19 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -81,11 +81,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=9DB24813A7F225FFE329D00EC0DF2B88; Path=/directions; HttpOnly
+      - JSESSIONID=EACEF09563F54A6BFE2D08001DD04B04; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 10 Mar 2021 04:17:47 GMT
+      - Wed, 10 Mar 2021 15:12:19 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -102,5 +102,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Wed, 10 Mar 2021 04:17:47 GMT
+  recorded_at: Wed, 10 Mar 2021 15:12:19 GMT
 recorded_with: VCR 6.0.0
