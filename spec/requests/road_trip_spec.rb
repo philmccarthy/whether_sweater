@@ -2,14 +2,12 @@ require 'rails_helper'
 
 describe 'Road Trip Request' do
   let!(:user) { create(:user) }
-  before :each do
-    current_time = DateTime.strptime('1615319685', '%s')
-    allow(Time).to receive(:current).and_return(current_time)
-  end
 
-  describe 'GET road trip', :vcr do
+  describe 'GET road trip' do
     describe 'Happy Path' do
       it 'responds with a JSON object with proper properties' do
+        WebMock.allow_net_connect!
+        VCR.turned_off {
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
@@ -44,9 +42,12 @@ describe 'Road Trip Request' do
         expect(parsed_response[:data][:attributes][:weather_at_eta].keys).to eq([:temperature, :conditions])
         expect(parsed_response[:data][:attributes][:weather_at_eta][:temperature]).to be_a Numeric
         expect(parsed_response[:data][:attributes][:weather_at_eta][:conditions]).to be_a String
+        }
       end
 
       it 'returns a forecast for day of arrival when travel time is longer than 8 hours and all attributes are the same' do
+        VCR.turned_off {
+        WebMock.allow_net_connect!
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
@@ -72,10 +73,11 @@ describe 'Road Trip Request' do
         expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_a Hash
         expect(parsed_response[:data][:attributes][:weather_at_eta][:temperature]).to be_a Numeric
         expect(parsed_response[:data][:attributes][:weather_at_eta][:conditions]).to be_a String
+        }
       end
     end
 
-    describe 'Sad Path' do
+    describe 'Sad Path', :vcr do
       it 'returns impossible travel time when the route requested is not really a road trip kind of trip' do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
@@ -104,7 +106,7 @@ describe 'Road Trip Request' do
         expect(parsed_response[:data][:attributes][:weather_at_eta]).to be_empty
       end
 
-      it 'throws a BadAddress exception if given a location that GeocodeService cant find' do
+      it 'throws a BadAddress exception if given a location that GeocodeService cant find', :vcr do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
@@ -127,7 +129,7 @@ describe 'Road Trip Request' do
         expect(parsed_response[:errors][0][:detail]).to eq("Are you sure that's a valid location? We couldn't find it!")
       end
 
-      it 'throws an InvalidParams exception if either origin or destination are missing' do
+      it 'throws an InvalidParams exception if either origin or destination are missing', :vcr do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
@@ -151,7 +153,7 @@ describe 'Road Trip Request' do
         expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
       end
 
-      it 'returns unauthorized if an API key is invalid' do
+      it 'returns unauthorized if an API key is invalid', :vcr do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
@@ -172,7 +174,7 @@ describe 'Road Trip Request' do
         expect(parsed_response[:errors][0]).to eq('API Key is invalid.')
       end
 
-      it 'returns unauthorized if an API key is not provided' do
+      it 'returns unauthorized if an API key is not provided', :vcr do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",

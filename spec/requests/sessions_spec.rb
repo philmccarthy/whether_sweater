@@ -18,7 +18,7 @@ describe 'Sessions Request' do
         }
         expect(User.count).to eq(1)
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(1)
         
@@ -47,7 +47,7 @@ describe 'Sessions Request' do
           "password": "incorrect-password"
         }
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -67,7 +67,7 @@ describe 'Sessions Request' do
           "password": "password"
         }
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -81,7 +81,7 @@ describe 'Sessions Request' do
           "password": "password"
         }
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -95,7 +95,7 @@ describe 'Sessions Request' do
           "email": "whatever@example.com"
         }
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -109,7 +109,7 @@ describe 'Sessions Request' do
           "email": "whatever@example.com"
         }
         
-        post api_v1_sessions_path(headers, params)
+        post api_v1_sessions_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 

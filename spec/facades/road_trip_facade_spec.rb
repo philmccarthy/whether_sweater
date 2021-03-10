@@ -2,13 +2,12 @@ require 'rails_helper'
 
 describe RoadTripFacade do
   let!(:user) { create(:user) }
-  before :each do
-    current_time = DateTime.strptime('1615349584', '%s')
-    allow(Time).to receive(:current).and_return(current_time)
-  end
-  describe 'class methods', :vcr do
+
+  describe 'class methods' do
     describe '::get_road_trip' do
       it 'returns a road trip PORO' do
+        WebMock.allow_net_connect!
+        VCR.turned_off {
         params = {
           origin: "Denver,CO",
           destination: "Pueblo,CO"
@@ -24,9 +23,10 @@ describe RoadTripFacade do
         expect(road_trip.weather_at_eta.keys).to eq([:temperature, :conditions])
         expect(road_trip.weather_at_eta[:temperature]).to be_a Numeric
         expect(road_trip.weather_at_eta[:conditions]).to be_a String
+      }
       end
 
-      it 'returns an impossible route string and no weather data if given a bad road trip destination' do
+      it 'returns an impossible route string and no weather data if given a bad road trip destination', :vcr do
         params = {
           origin: "Denver,CO",
           destination: "London,UK"
