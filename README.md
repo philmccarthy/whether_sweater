@@ -53,6 +53,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
       </ul>
   </ol>
 </details>
@@ -117,7 +118,7 @@ To get a local copy up and running follow these simple steps.
 5. In Postman, hit the documented endpoints at `http://localhost:3000/api/v1/<endpoint>`
 
 <!-- USAGE EXAMPLES -->
-## Usage
+### Usage
 
 Get started quickly with the [Postman Documentation](https://documenter.getpostman.com/view/14287104/Tz5ndz16) for _Whether Sweater?_
 
