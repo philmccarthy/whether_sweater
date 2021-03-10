@@ -107,7 +107,7 @@ describe 'Users Request' do
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(parsed_response[:errors][0]).to eq("Email can't be blank")
+        expect(parsed_response[:errors][0][:code]).to eq("invalid_parameters")
       end
 
       it 'doesnt create a user and returns errors if no JSON body is provided' do
@@ -121,13 +121,7 @@ describe 'Users Request' do
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(parsed_response[:errors].size).to eq(4)
-        expect(parsed_response[:errors]).to eq([
-          "Password can't be blank",
-          "Email can't be blank",
-          "Email is invalid",
-          "Password confirmation can't be blank"
-        ])
+        expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
       end
       
       it 'doesnt create a user and returns errors if email is already taken' do

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'Road Trip Request' do
+  let!(:user) { create(:user) }
   before :each do
     current_time = DateTime.strptime('1615319685', '%s')
     allow(Time).to receive(:current).and_return(current_time)
@@ -13,7 +14,7 @@ describe 'Road Trip Request' do
         params = {
           "origin": "Denver,CO",
           "destination": "Pueblo,CO",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "sEcUrIkEy"
         }
 
         post '/api/v1/road_trip', headers: headers, params: params.to_json
@@ -50,7 +51,7 @@ describe 'Road Trip Request' do
         params = {
           "origin": "Denver,CO",
           "destination": "Seattle,WA",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "sEcUrIkEy"
         }
 
         post '/api/v1/road_trip', headers: headers, params: params.to_json
@@ -80,7 +81,7 @@ describe 'Road Trip Request' do
         params = {
           "origin": "Denver,CO",
           "destination": "London,UK",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "sEcUrIkEy"
         }
 
         post '/api/v1/road_trip', headers: headers, params: params.to_json
@@ -108,7 +109,7 @@ describe 'Road Trip Request' do
         params = {
           "origin": "Denver,CO",
           "destination": "askjdfhaskj",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "sEcUrIkEy"
         }
 
         post '/api/v1/road_trip', headers: headers, params: params.to_json
@@ -130,7 +131,7 @@ describe 'Road Trip Request' do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
         params = {
           "origin": "Denver,CO",
-          "api_key": "jgn983hy48thw9begh98h4539h4"
+          "api_key": "sEcUrIkEy"
         }
 
         post '/api/v1/road_trip', headers: headers, params: params.to_json
@@ -147,6 +148,64 @@ describe 'Road Trip Request' do
         expect(parsed_response[:errors][0][:code]).to be_a String
         expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
         expect(parsed_response[:errors][0][:detail]).to be_a String
+        expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
+      end
+
+      it 'returns unauthorized if an API key is invalid' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
+        params = {
+          "origin": "Denver,CO",
+          "destination": "askjdfhaskj",
+          "api_key": "averyinvalidapikey"
+        }
+
+        post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(401)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors]).to be_an Array
+        expect(parsed_response[:errors][0]).to eq('API Key is invalid.')
+      end
+
+      it 'returns unauthorized if an API key is not provided' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
+        params = {
+          "origin": "Denver,CO",
+          "destination": "askjdfhaskj"
+        }
+
+        post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(401)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response).to be_a Hash
+        expect(parsed_response.keys).to eq([:errors])
+        expect(parsed_response[:errors]).to be_an Array
+        expect(parsed_response[:errors][0]).to eq('API Key is invalid.')
+      end
+
+      it 'doesnt allow the request to be sent as query parameters' do
+        params = {
+          "origin": "Denver,CO",
+          "destination": "Arvada,CO",
+          "api_key": "sEcUrIkEy"
+        }
+
+        post api_v1_road_trip_index_path(params)
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
         expect(parsed_response[:errors][0][:detail]).to eq('Parameters were invalid. Please review the documentation for this endpoint.')
       end
     end
