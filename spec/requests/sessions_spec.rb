@@ -105,9 +105,7 @@ describe 'Sessions Request' do
 
       it 'returns unauthorized exception if both email & password fields arent provided in the request, but doesnt give any hints' do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json'}
-        params = {
-          "email": "whatever@example.com"
-        }
+        params = ''
         
         post api_v1_sessions_path, headers: headers, params: params.to_json
 
