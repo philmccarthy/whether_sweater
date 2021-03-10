@@ -54,8 +54,8 @@ RSpec.describe ForecastFacade do
       end
 
       it 'raises a bad address exception if given location is not found by geocode service', :vcr do
-        # Error handling in the GeocodeFacade prevents a ForecastService call to the API
-        # if coordinates for given location parameter can't be found by the GeocodeService
+        # The call stack routes to the GeocodeService, which prevents a ForecastService 
+        # call to the API if coordinates for given location parameter can't be found
         params = { location: 'sdkjfhask'}
         expect { GeocodeFacade.get_geocode(params[:location]) }.to raise_error(Exceptions::BadAddress)
       end

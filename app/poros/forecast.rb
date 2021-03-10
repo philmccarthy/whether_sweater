@@ -34,11 +34,6 @@ class Forecast
   end
 
   def in(travel_time)
-    # forecast at time...
-    # seconds_from_now = time_to_seconds(time)
-    # time_for_forecast = future_time(time_to_seconds(travel_time))
-    # convert travel time to seconds
-    # calculate ETA as time
     travel_time_seconds = time_to_seconds(travel_time)
     if travel_time_seconds < 32400
       eta = convert(travel_time_seconds)
