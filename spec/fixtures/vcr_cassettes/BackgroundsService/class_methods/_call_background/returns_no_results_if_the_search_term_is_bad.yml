@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pexels.com/v1/search?orientation=landscape&per_page=1&query=sdfjhasgfdj
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - 563492ad6f91700001000001ec784cde58e84a42b533039a9b385d80
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Mar 2021 04:56:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cf_bm=5eb2145786d45bcab4cd143510edd6f57abe7b1e-1615352208-1800-ATYv7Fanl5/hIGQb2OzNOClN1jjGyEefdOPVP2a2ccSMOspWU3lSpNcYaWQahzae7QpwDs2tL9ZbgL5xtth+3rc=;
+        path=/; expires=Wed, 10-Mar-21 05:26:48 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      - __cf_bm=653f79672276196e03e6e86b9a553f08d336d421-1615352208-1800-AZcFydw6Z/aWcdjl91Pz3q7bvCKjOn6wioWeHVJ3VhZKC49wAXmzf5lf5iYNHVf6ux01/m1LirVheKJKjD71EAI=;
+        path=/; expires=Wed, 10-Mar-21 05:26:48 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      - __cfduid=d03459f425b2a0072e7a27eee66ab7aeb1615352208; expires=Fri, 09-Apr-21
+        04:56:48 GMT; path=/; domain=.pexels.com; HttpOnly; SameSite=Lax; Secure
+      - __cfduid=dbdcf2a545b6869e998b082bf39da4be51615352208; expires=Fri, 09-Apr-21
+        04:56:48 GMT; path=/; domain=.pexels.com; HttpOnly; SameSite=Lax; Secure
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '08bc17b3d20000f788751eb000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Vary:
+      - Origin
+      X-Frame-Options:
+      - ALLOWALL
+      X-Ratelimit-Limit:
+      - '20000'
+      X-Ratelimit-Remaining:
+      - '19967'
+      X-Ratelimit-Reset:
+      - '1617664345'
+      X-Request-Id:
+      - 41236038-a6c0-4d64-a864-4b21dc036b8f
+      X-Runtime:
+      - '0.078168'
+      X-Server:
+      - master
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 62d9f5661a02f788-DEN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"per_page":1,"photos":[],"total_results":0}'
+  recorded_at: Wed, 10 Mar 2021 04:56:48 GMT
+recorded_with: VCR 6.0.0

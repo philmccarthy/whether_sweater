@@ -12,7 +12,7 @@ describe 'Users Request' do
         }
         expect(User.count).to eq(0)
 
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(1)
         expect(response).to be_successful
@@ -43,7 +43,7 @@ describe 'Users Request' do
           "password_confirmation": "notright"
         }
 
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(0)
         expect(response).to_not be_successful
@@ -63,7 +63,7 @@ describe 'Users Request' do
           "password": "password"
         }
 
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(0)
         expect(response).to_not be_successful
@@ -81,7 +81,7 @@ describe 'Users Request' do
           "password_confirmation": "password"
         }
 
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(0)
         expect(response).to_not be_successful
@@ -99,7 +99,7 @@ describe 'Users Request' do
           "password_confirmation": "password"
         }
 
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(0)
         expect(response).to_not be_successful
@@ -107,13 +107,13 @@ describe 'Users Request' do
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(parsed_response[:errors][0]).to eq("Email can't be blank")
+        expect(parsed_response[:errors][0][:code]).to eq("invalid_parameters")
       end
 
       it 'doesnt create a user and returns errors if no JSON body is provided' do
         headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json'}
 
-        post '/api/v1/users', headers: headers
+        post api_v1_users_path, headers: headers
 
         expect(User.count).to eq(0)
         expect(response).to_not be_successful
@@ -121,12 +121,7 @@ describe 'Users Request' do
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(parsed_response[:errors].size).to eq(3)
-        expect(parsed_response[:errors]).to eq([
-          "Password can't be blank",
-          "Email can't be blank",
-          "Password confirmation can't be blank"
-        ])
+        expect(parsed_response[:errors][0][:code]).to eq('invalid_parameters')
       end
       
       it 'doesnt create a user and returns errors if email is already taken' do
@@ -138,16 +133,35 @@ describe 'Users Request' do
         }
         
         # First request is successful
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         expect(User.count).to eq(1)
         expect(response).to be_successful
 
         # Second request should fail email uniqueness validation
-        post '/api/v1/users', headers: headers, params: params.to_json
+        post api_v1_users_path, headers: headers, params: params.to_json
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
         expect(parsed_response[:errors][0]).to eq('Email has already been taken')
+      end
+
+      it 'only accepts valid emails based on formatting' do
+        headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json'}
+        params = {
+          "email": "whatever",
+          "password": "password",
+          "password_confirmation": "password"
+        }
+
+        post api_v1_users_path, headers: headers, params: params.to_json
+
+        expect(User.count).to eq(0)
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response[:errors][0]).to eq("Email is invalid")
       end
     end
   end

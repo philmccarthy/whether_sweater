@@ -13,6 +13,7 @@ require "action_cable/engine"
 require './app/errors/invalid_params'
 require './app/errors/bad_address'
 require './app/errors/unauthorized'
+require './app/errors/not_found'
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 

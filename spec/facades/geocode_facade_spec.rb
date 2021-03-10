@@ -12,6 +12,11 @@ RSpec.describe GeocodeFacade do
           lng: -104.984853
         )
       end
+
+      it 'raises a bad address exception if given location returns the default location', :vcr do
+        params = { location: 'sdkjfhask'}
+        expect { GeocodeFacade.get_geocode(params[:location]) }.to raise_error(Exceptions::BadAddress)
+      end
     end
   end
 end

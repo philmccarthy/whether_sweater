@@ -5,7 +5,8 @@ describe 'Forecast Request' do
     describe 'Happy Path' do
       it 'responds with a JSON object with proper properties' do
         params = { location: 'denver,co' }
-        get "/api/v1/forecast?location=#{params[:location]}"
+        get api_v1_forecast_index_path(params)
+
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
@@ -16,7 +17,7 @@ describe 'Forecast Request' do
         expect(parsed_response[:data]).to be_a Hash
 
         expect(parsed_response[:data]).to have_key :id
-        expect(parsed_response[:data][:id]).to be_nil
+        expect(parsed_response[:data][:id]).to eq('null')
         
         expect(parsed_response[:data]).to have_key :type
         expect(parsed_response[:data][:type]).to eq('forecast')
@@ -108,7 +109,8 @@ describe 'Forecast Request' do
 
     describe 'Sad Path' do
       it 'responds with an error if no location parameter is given' do
-        get "/api/v1/forecast?location="
+        params = { location: '' }
+        get api_v1_forecast_index_path(params)
         
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
@@ -127,7 +129,7 @@ describe 'Forecast Request' do
 
       it 'raises an exception if a given a location that cannot be found' do
         params = { location: 'asldkjfhaslkdfh' }
-        get "/api/v1/forecast?location=#{params[:location]}"
+        get api_v1_forecast_index_path(params)
 
         expect(response).to_not be_successful
 
