@@ -28,7 +28,7 @@
   <h3 align="center">Whether Sweater?</h3>
 
   <p align="center">
-    _Whether Sweater?_ is a Rails API built to JSON:API specifications. The API serves up endpoints that consume and aggregate informaton from MapQuest, OpenWeather and Pexels Image Search APIs.
+    Whether Sweater? is a Rails API built to JSON:API specifications. The API serves up endpoints that consume and aggregate informaton from MapQuest, OpenWeather and Pexels Image Search APIs.
     <br />
     <a href="https://github.com/philmccarthy/whether_sweater"><strong>Explore the docs »</strong></a>
     <br />
