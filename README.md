@@ -125,7 +125,7 @@ Get started quickly with the [Postman Documentation](https://documenter.getpostm
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@philmccccarthy](https://twitter.com/@philmccccarthy) - [hi@philmccarthy.dev](mailto:hi@philmccarthy.dev)
+Phil McCarthy - [@philmccccarthy](https://twitter.com/@philmccccarthy) - [hi@philmccarthy.dev](mailto:hi@philmccarthy.dev)
 
 Project Link: [https://github.com/philmccarthy/whether_sweater](https://github.com/philmccarthy/whether_sweater)
 
